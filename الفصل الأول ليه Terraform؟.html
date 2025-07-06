@@ -1,0 +1,1158 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+/* Theme adapted from https://codemirror.net/theme/dracula.css */
+/*
+    Name:       dracula
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+
+    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
+*/
+
+.cm-s-inner {
+  padding: 0.5rem 0.2rem;
+  border: 1px solid var(--accent-color) !important;
+  border-radius: 0.25rem;
+}
+
+.cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
+  background-color: #282a36 !important;
+  color: #f8f8f2 !important;
+  border: none;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+  width: 5ch;
+  color: #282a36;
+}
+.cm-s-inner .CodeMirror-cursor { border-left: solid thin #f8f8f2 !important; }
+.cm-s-inner .CodeMirror-linenumber {
+  width: 4ch !important;
+  color: #6D8A88;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-inner span.cm-comment { color: #6272a4; }
+.cm-s-inner span.cm-string, .cm-s-inner span.cm-string-2 { color: #f1fa8c; }
+.cm-s-inner span.cm-number { color: #bd93f9; }
+.cm-s-inner span.cm-variable, .cm-s-inner span.cm-variable-2 { color: #50fa7b; }
+.cm-s-inner span.cm-def { color: white; }
+.cm-s-inner span.cm-operator { color: #ff79c6; }
+.cm-s-inner span.cm-keyword { color: #ff79c6; }
+.cm-s-inner span.cm-atom { color: #bd93f9; }
+.cm-s-inner span.cm-meta { color: #f8f8f2; }
+.cm-s-inner span.cm-tag { color: #ff79c6; }
+.cm-s-inner span.cm-attribute { color: #50fa7b; }
+.cm-s-inner span.cm-qualifier { color: #50fa7b; }
+.cm-s-inner span.cm-property { color: #66d9ef; }
+.cm-s-inner span.cm-builtin { color: #50fa7b; }
+.cm-s-inner span.cm-variable-3, .cm-s-inner span.cm-type { color: #ffb86c; }
+
+.cm-s-inner .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+.CodeMirror-selectedtext, .CodeMirror-selected {
+  background: #313746 !important;
+  text-shadow: none;
+}
+/* 
+  Middle East - Night
+  Typora RTL theme
+  design: isapanah.com
+  date: 2019
+  version: 1.1
+*/
+
+@import url("file:////home/Taha/.config/Typora/themes/");
+
+/*
+  Vazir provided by Rastikerdar
+  Downloaded from `https://github.com/rastikerdar/vazir-font`
+*/
+/*
+	Cousine provided by Steve Matteson from Google Fonts
+	Downloaded from `https://fonts.google.com/specimen/Cousine`
+*/
+/** ROOT VARIABLES **/
+
+:root {
+  --bg-color: #1e2022; /* change background */
+  --text-color: #dddddd; /* change text color */
+  --md-char-color: #5b5b5b; /* change color of mbeta characetrs like `*` in markdown */
+  --meta-content-color: #757575; /* change color of meta contents like image text or link address in markdown */
+  --link-color: #6bcafb; /* change color of hyperlinks */
+
+  --primary-color: #428bca; /* primary color */
+  --primary-btn-border-color: #285e8e; /* primary color for buttons */
+  --primary-btn-text-color: #fff; /* primary text color for buttons */
+  --accent-color: #3c3c3c; /* background accent color */
+
+  --window-border: 1px solid #16161a; /* border for sidebar, etc*/
+
+  --active-file-bg-color: #16161a; /* background color if list item in file tree or file list*/
+  --active-file-text-color: inherit; /* text color for selected file */
+  --active-file-border-color: #777; /* border color for selected file */
+  --active-search-item-bg-color: #212121; /* background color for active search item */
+
+  --side-bar-bg-color: #2b2b2b; /* change background of sidebar*/
+  --item-hover-bg-color: var(--bg-color); /* background of control items when hover, like menu in sidebar*/
+  --item-hover-text-color: white; /* text color upon hovering over menu items */
+  --search-hit-bg-color: #428bca40;
+  --search-select-text-color: var(--text-color); /* Text color for selected searched text */
+  --search-select-bg-color: #428bca90; /* Background color for selected searched text */
+  --rawblock-edit-panel-bd: var(--accent-color); /* Background color for inline HTML "edit panel" blocks */
+  --monospace: "Cousine"; /* monospace font for codes, fences */
+
+  --megamenu-bg-color: var(--side-bar-bg-color); /* background color for unibody megamenu */
+  --megamenu-sidebar-bg-color: var(--bg-color); /* background color for megamenu sidebar */
+  --megamenu-sidebar-hover-bg-color: #161819; /* background color for hovering megamenu sidebar items */
+  --megamenu-sidebar-active-bg-color: #101010; /* background color for active megamenu sidebar items */
+  --megamenu-button-border-color: #9292928f; /* background color for megamenu buttons */
+  --megamenu-item-hover-bg-color: var(--bg-color); /* background color for hovering megamenu items */
+  --megamenu-item-hover-text-color: white; /* text color for hovering megamenu items */
+}
+
+/** TAGS **/
+
+html,
+body {
+  font-family: "Vazir", "Lato", sans-serif;
+}
+
+body {
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, p, a, del, mark, #write p, #write a, #write del, #write mark, #write ul, #write li, #write ol,
+#write table, #write tr, #write td, table, tr, td {
+  direction: rtl;
+}
+
+.outline-item{
+  direction: rtl;
+}
+.outline-h2, .outline-h3, .outline-h4,
+ .outline-h5, .outline-h6 {
+  margin-right: 10px !important;
+}
+
+#md-notification, #md-notification *{
+  direction: ltr;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Vazir-Bold";
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 0.7rem 0;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin: 0.2rem 0;
+}
+
+h5 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+a {
+  color: var(--link-color);
+}
+
+del {
+  color: var(--md-char-color);
+}
+
+mark {
+  padding: 2px 1px;
+  background: #fee405;
+}
+
+/* Writing area -> line height */
+#write {
+	line-height: 1.6;
+}
+
+/* Custom list-style */
+#write ol,
+#write ul {
+  padding-left: 2rem;
+  margin: 0.5rem 0;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+#write ul {
+  list-style-type: disc;
+}
+
+#write ol > li,
+#write ul > li {
+  color: var(--primary-color);
+  padding-left: 0.25em;
+}
+
+#write ol li > *,
+#write ul li > * {
+  color: var(--text-color);
+}
+
+#write .md-task-list-item {
+  transition: all 0.3s;
+}
+
+#write .md-task-list-item > input {
+  -webkit-appearance: initial;
+  display: block;
+  position: absolute;
+  border: 1px solid var(--md-char-color);
+  border-radius: 0.25rem;
+  margin-top: 0.1rem;
+  margin-right: -1.8rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  transition: background 0.4s;
+  right: 0;
+}
+
+#write .md-task-list-item > input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#write .md-task-list-item > input:hover {
+  background: var(--accent-color);
+}
+
+#write .md-task-list-item.task-list-done > p {
+  color: var(--md-char-color);
+  text-decoration: line-through;
+}
+
+#write .md-task-list-item > input[checked]::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 60%;
+  width: 2px;
+  transform: rotate(40deg);
+  background: var(--text-color);
+}
+
+#write .md-task-list-item > input[checked]::after {
+  content: "";
+  position: absolute;
+  top: 46%;
+  left: 25%;
+  height: 30%;
+  width: 2px;
+  transform: rotate(-40deg);
+  background: var(--text-color);
+}
+
+blockquote {
+  margin: 1rem 0rem 1rem 0;
+  font-family: "Vazir-Bold";
+}
+
+blockquote p::before {
+  content: "";
+  position: absolute;
+  right: -2rem;
+  height: 100%;
+  width: 0.25rem;
+  background: var(--primary-color);
+}
+
+blockquote p:not(:last-child):before {
+  height: calc(100% + 1rem);
+}
+
+code,
+.md-fences,
+tt {
+  font-family: "Cousine", monospace;
+  font-size: 1rem;
+}
+
+code {
+  border: 1px solid var(--accent-color);
+  border-radius: 0.25rem;
+  padding: 0 0.125rem;
+}
+
+/* Code auto-suggest list menu */
+#fences-auto-suggest .active {
+  background: var(--accent-color);
+}
+
+hr {
+  border-color: var(--md-char-color);
+}
+
+/* YAML */
+pre.md-meta-block {
+  background-color: transparent;
+  border-bottom: 1px solid var(--md-char-color);
+  padding-bottom: 1rem;
+  opacity: 0.8;
+}
+
+/* Tables */
+table {
+  border: 1px solid var(--md-char-color);
+  margin: 1rem 0;
+}
+
+thead {
+  background: #4d4d4d;
+}
+
+table tr:nth-child(2n) {
+  background: var(--accent-color);
+}
+
+td,
+th {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--md-char-color);
+}
+
+/* Table toolbar */
+.md-table-edit {
+  border-top: 1px solid var(--meta-content-color);
+  margin-top: -29px !important;
+  padding: 3px 0;
+}
+
+/* Table drag areas */
+.typora-table-drag-area::after {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--text-color);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+#typora-table-row-tracker .typora-table-drag-area::after {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+}
+
+#typora-table-col-tracker .typora-table-drag-area::after {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 0;
+}
+
+#typora-table-row-tracker .typora-table-drag-area:hover::after,
+#typora-table-col-tracker .typora-table-drag-area:hover::after {
+  opacity: 1;
+}
+
+/* Table of contents */
+.md-toc-tooltip {
+  z-index: 10;
+}
+
+span.md-toc-item {
+  font-size: 1.1rem;
+  color: var(--primary-btn-border-color);
+}
+
+span.md-toc-h1 {
+  font-family: "Vazir-Bold";
+  font-size: 1.3rem;
+}
+
+span.md-toc-h2 {
+  font-size: 1.2rem;
+}
+
+/* Footnote */
+sup.md-footnote {
+  font-family: "Vazir-Bold";
+  font-size: 0.8rem;
+  padding: 0 4px;
+}
+
+span.md-def-split {
+  min-width: 1ch;
+}
+
+.md-def-name::before,
+.md-def-name::after {
+  color: var(--meta-content-color);
+}
+
+/* Writing area */
+#write {
+  width: 90%;
+  max-width: 700px;
+}
+
+/* Fill whole width of container */
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write p,
+#write pre {
+  width: auto;
+}
+
+/* Header prefix symbol */
+/* Disable default header symbol */
+#write h3.md-focus::before,
+#write h4.md-focus::before,
+#write h5.md-focus::before,
+#write h6.md-focus::before {
+  border: none;
+  border-radius: 0;
+  left: auto;
+  float: none;
+  padding: 0;
+  vertical-align: baseline;
+  line-height: 20px;
+}
+
+#write h1::before,
+#write h2::before,
+#write h3::before,
+#write h4::before,
+#write h5::before,
+#write h6::before {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 10px);
+  color: var(--md-char-color);
+  font-size: 1rem;
+  font-weight: bold;
+  font-variant: "small-caps";
+}
+
+#write h1::before {
+  content: "H1";
+  top: 0.7rem;
+}
+
+#write h2::before {
+  content: "H2";
+  top: 0.37rem;
+}
+
+#write h3::before {
+  content: "H3";
+  top: 0.15rem;
+}
+
+#write h4::before {
+  content: "H4";
+}
+
+#write h5::before {
+  content: "H5";
+}
+
+#write h6::before {
+  content: "H6";
+}
+
+/* Image meta text */
+#write .md-image > .md-meta {
+  color: var(--meta-content-color);
+}
+
+/* Inline styles */
+.md-rawblock-tooltip {
+  top: -1.5rem;
+  height: 1.5rem;
+  padding: 0.25rem;
+}
+
+/* Search results */
+.md-search-hit {
+  background: var(--search-hit-bg-color);
+  border-radius: 0.125em;
+}
+
+.md-search-select {
+  background: var(--search-select-bg-color);
+  border: 1px solid var(--megamenu-button-border-color);
+  padding: 0 1px;
+}
+
+/* Focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) *,
+.on-focus-mode pre.md-end-block:not(.md-focus):not(.md-focus-container) {
+  color: var(--md-char-color) !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) img,
+.on-focus-mode
+  blockquote
+  .md-end-block:not(.md-focus):not(.md-focus-container)::before,
+.on-focus-mode li:not(.md-focus-container)::before {
+  opacity: 0.5;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) mark {
+  background: var(--accent-color);
+}
+
+/* UI Sidebar */
+#typora-sidebar {
+  border-right: 1px solid #19191c;
+}
+
+.sidebar-tabs {
+  font-family: "Vazir-Bold";
+  border-bottom: 1px solid black;
+}
+
+.file-list-item-file-name {
+  font-family: "Vazir-Bold";
+  font-size: 1.2rem;
+}
+
+input.file-list-item-file-name, input.file-tree-rename-input {
+  background: var(--side-bar-bg-color);
+}
+
+#file-library-search .file-list-item-file-name {
+  font-size: 1.1rem;
+}
+
+#file-library-search .ty-search-item.active {
+  background: var(--active-search-item-bg-color);
+}
+
+#file-library-search-input {
+  background: var(--side-bar-bg-color);
+}
+
+.file-list-item-summary,
+.ty-search-item-line {
+  font-family: "Vazir", "Lato", sans-serif;
+}
+
+.ty-file-search-match-text,
+.ty-outline-hit {
+  font-weight: bold;
+  background: transparent;
+}
+
+#outline-content {
+  line-height: 1.4em;
+}
+
+#outline-content .outline-h1 > .outline-item {
+  font-family: "Vazir-Bold";
+}
+
+.file-library-node,
+.file-library-node .file-node-background {
+  transition: background 0.4s;
+}
+
+.file-tree-node.file-library-file-node:not(.active):hover .file-node-background,
+.file-list-item.file-library-node:not(.active):hover {
+  background: var(--item-hover-bg-color);
+}
+
+.file-tree-node.file-library-file-node.active .file-node-background,
+.file-list-item.file-library-file-node.active {
+  border-left: 5px solid var(--primary-color);
+}
+
+/* Remove blinking animation when updating filename */
+.blink-area {
+  animation: none;
+}
+
+#ty-sidebar-footer {
+  border-top: 1px solid black;
+}
+
+.sidebar-footer-item {
+  transition: background 0.3s;
+}
+
+.outline-title-wrapper,
+.outline-item-wrapper.outline-h1 > .outline-item {
+  font-family: "Vazir-Bold";
+  font-weight: bold;
+}
+
+/* Windows-specific */
+/* Context and dropdown menus */
+ul.dropdown-menu li.active a,
+ul.dropdown-menu li.has-extra-menu.active a,
+ul.dropdown-menu li.has-btn-submenu a.menu-style-btn.active,
+#footer-word-count-info .ty-footer-word-count-all tr:hover,
+#ty-spell-check-dict-missing-menu li:hover,
+.ty-spell-check-panel-item.ty-active,
+.ty-spell-check-panel-item:hover {
+  background: var(--text-color) !important;
+  color: var(--bg-color) !important;
+}
+
+/* Windows Unibody */
+footer.ty-footer {
+  border-top: 0;
+}
+
+.footer-item:hover {
+  background: var(--text-color) !important;
+  color: var(--bg-color) !important;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px var(--primary-color);
+}
+
+/* Windows Unibody megamenu */
+.megamenu-opened header {
+  background-image: none;
+}
+
+#top-titlebar, #top-titlebar * {
+  color: inherit;
+}
+
+#megamenu-content {
+  padding-top: 28px;
+  background: var(--megamenu-bg-color);
+  color: var(--text-color);
+}
+
+.megamenu-menu-panel:not(:first-of-type) {
+  margin-top: 48px;
+}
+
+#megamenu-content .long-btn {
+  border-color: var(--megamenu-button-border-color);
+  transition: all 0.4s;
+}
+
+#megamenu-content .long-btn:hover {
+  border-color: var(--primary-color);
+  background: var(--megamenu-item-hover-bg-color);
+  color: var(--megamenu-item-hover-text-color) !important;
+}
+
+#recent-file-panel-action-btn {
+  background: inherit;
+  border-color: var(--megamenu-button-border-color);
+  transition: all 0.4s;
+}
+
+#recent-file-panel-action-btn:hover {
+  border-color: var(--primary-color);
+  background: var(--megamenu-item-hover-bg-color);
+  color: var(--megamenu-item-hover-text-color);
+}
+
+#recent-document-table {
+  border: 1px solid var(--accent-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+  background-color: inherit;
+}
+
+#recent-file-panel tbody tr:hover {
+  background-color: var(--megamenu-item-hover-bg-color) !important;
+}
+
+#recent-file-panel tbody tr:hover td:nth-child(1) {
+  color: var(--megamenu-item-hover-text-color);
+}
+
+/* Windows Unibody sidebar */
+#megamenu-menu-sidebar {
+  background: var(--megamenu-sidebar-bg-color);
+  color: var(--text-color);
+}
+
+.megamenu-menu-header, .megamenu-menu-list li:not(.saved) a {
+  transition: all 0.4s;
+}
+
+.megamenu-menu-header {
+  border-bottom: var(--window-border);
+}
+
+.megamenu-menu-header:hover, .megamenu-menu-list li:not(.saved) a:not(.active):hover {
+  background: var(--megamenu-sidebar-hover-bg-color);
+}
+
+.megamenu-menu-list li a.active {
+  background: var(--megamenu-sidebar-active-bg-color) !important;
+}
+
+#m-saved {
+  background: inherit;
+  color: inherit;
+}
+
+#megamenu-menu-list {
+  margin: 0;
+}
+
+.theme-preview-div {
+  transition: all 0.4s;
+}
+
+.theme-preview-div:hover {
+  border: 4px solid var(--primary-btn-border-color);
+}
+
+.theme-preview-div.active, .theme-preview-div.active:hover {
+  border: 4px solid var(--primary-color);
+}
+
+.theme-preview-div.active i {
+  color: var(--primary-color);
+}
+
+/* Source Code */
+.cm-s-typora-default .cm-s-inner.CodeMirror-line {
+  border: 0 !important;
+}
+
+/* Print/PDF */
+@media print {
+  #write ol > li,
+  #write ul > li {
+    color: var(--text-color);
+  }
+  #write h1::before, #write h2::before, #write h3::before,
+  #write h4::before, #write h5::before, #write h6::before {
+    display: none;
+  }
+}
+
+
+
+
+</style><title>الفصل الأول ليه Terraform؟</title>
+
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><p>&nbsp;</p><h1 id='الفصل-الأول-ليه-terraform'><strong><span>الفصل الأول: ليه </span><code>Terraform</code><span>؟</span></strong></h1><p><span>الـ </span><code>software</code><span> مش بيخلص لما الـ </span><code>code</code><span> يشتغل على جهازك. ومش بيخلص لما الـ </span><code>tests</code><span> تنجح. ومش بيخلص لما حد يقولك &quot;</span><code>ship it</code><span>&quot; في الـ </span><code>code review</code><span>. الـ </span><code>software</code><span> مش بيخلص غير لما تسلمه للـ </span><code>user</code><span>.</span></p><p><span>الـ </span><code>Software delivery</code><span> دي عبارة عن كل الشغل اللي محتاج تعمله عشان تخلي الـ </span><code>code</code><span> متاح للعميل، زي إنك تشغل الـ </span><code>code</code><span> ده على </span><code>production servers</code><span>، وتخليه قادر يستحمل انقطاع الخدمة أو الزيادة المفاجئة في عدد الزوار (traffic spikes)، وتحميه من أي هجمات. قبل ما ندخل في تفاصيل </span><code>Terraform</code><span>، يستاهل إننا نرجع خطوة لورا ونشوف </span><code>Terraform</code><span> مكانه فين في الصورة الكبيرة بتاعة الـ </span><code>software delivery</code><span>.</span></p><p><span>في الفصل ده، هنتكلم في المواضيع دي:</span></p><ul><li><p><span>إيه هو الـ </span><code>DevOps</code><span>؟</span></p></li><li><p><span>إيه هو الـ </span><code>infrastructure as code</code><span>؟</span></p></li><li><p><span>إيه هي فوايد الـ </span><code>infrastructure as code</code><span>؟</span></p></li><li><p><span>إزاي </span><code>Terraform</code><span> بيشتغل؟</span></p></li><li><p><span>إيه الفرق بين </span><code>Terraform</code><span> وأدوات الـ </span><code>infrastructure-as-code</code><span> التانية؟</span></p></li></ul><h3 id='إيه-هو-الـ-devops'><strong><span>إيه هو الـ </span><code>DevOps</code><span>؟</span></strong></h3><p><span>في الماضي مش البعيد أوي، لو كنت عايز تعمل شركة </span><code>software</code><span>، كنت بتبقى محتاج تدير </span><code>hardware</code><span> كتير بنفسك. كنت بتجهز كباين و </span><code>racks</code><span>، تملأها بـ </span><code>servers</code><span>، توصل أسلاك، تركب تبريد، تعمل أنظمة كهرباء احتياطية، وهكذا. وكان منطقي إنك يكون عندك فريق، غالبًا اسمه الـ </span><code>Developers</code><span> (أو </span><code>Devs</code><span>)، مسؤول عن كتابة الـ </span><code>software</code><span>، وفريق تاني منفصل، غالبًا اسمه </span><code>Operations</code><span> (أو </span><code>Ops</code><span>)، مسؤول عن إدارة الـ </span><code>hardware</code><span> ده.</span></p><p><span>الفريق بتاع الـ </span><code>Devs</code><span> كان بيبني الـ </span><code>application</code><span> و &quot;يرميه من فوق السور&quot; لفريق الـ </span><code>Ops</code><span>. وكان على فريق الـ </span><code>Ops</code><span> إنه يشوف إزاي يعمل </span><code>deploy</code><span> ويشغل الـ </span><code>application</code><span> ده. معظم الشغل ده كان بيتعمل بشكل يدوي. جزء من ده كان غصب عنهم، لأن جزء كبير من الشغل كان له علاقة بتوصيل الـ </span><code>hardware</code><span> بنفسه (زي تركيب الـ </span><code>servers</code><span> في الـ </span><code>racks</code><span> وتوصيل كابلات الشبكة). بس حتى الشغل اللي فريق </span><code>Ops</code><span> كان بيعمله في الـ </span><code>software</code><span>، زي تنصيب الـ </span><code>application</code><span> والحاجات اللي بيعتمد عليها، كان غالبًا بيتم عن طريق تنفيذ أوامر بشكل يدوي على الـ </span><code>server</code><span>.</span></p><p><span>الموضوع ده بيمشي كويس شوية، بس مع نمو الشركة، بتبدأ تقابلك مشاكل. والسيناريو ده بيتكرر: عشان الـ </span><code>releases</code><span> بتتعمل يدويًا، كل ما عدد الـ </span><code>servers</code><span> يزيد، الـ </span><code>releases</code><span> بتبقى أبطأ، ومؤرفة، ونتائجها غير متوقعة. فريق الـ </span><code>Ops</code><span> بيغلط من وقت للتاني، فبينتهي بيك الحال بـ </span><code>snowflake servers</code><span>، ودي حالة بيكون فيها كل </span><code>server</code><span> له </span><code>configuration</code><span> مختلف ولو بحاجة بسيطة عن الباقيين (ودي مشكلة معروفة باسم </span><code>configuration drift</code><span>). نتيجة لده، عدد الـ </span><code>bugs</code><span> بيزيد. الـ </span><code>Developers</code><span> بيخلعوا نفسهم  ويقولوا: &quot;ما هي شغالة على جهازي!&quot; الانقطاعات والـ </span><code>downtime</code><span> بيبقوا أكتر. فريق الـ </span><code>Ops</code><span>، اللي تعب من إن الـ </span><code>pagers</code><span> بتاعته بترن الساعة 3 الفجر بعد كل </span><code>release</code><span>، بيقلل وتيرة الـ </span><code>releases</code><span> لمرة كل أسبوع. بعدين مرة كل شهر. بعدين مرة كل ست شهور. قبل الـ </span><code>release</code><span> النص سنوي بأسابيع، الفرق بتبدأ تحاول تدمج كل مشاريعها مع بعض، وده بيؤدي لكمية </span><code>merge conflicts</code><span> ضخمة. محدش بيقدر يخلي الـ </span><code>release branch</code><span> مستقر. الفرق بتبدأ تلوم بعضها. بتتكون silos (مصطلح بيشير ان كل واحد قاعد فى جزيرة لوحدة يعني كله فى كوكب) والشركة بتقف تمامًا.</span></p><p><span>دلوقتي، فيه تحول جذري بيحصل. بدل ما الشركات تدير الـ </span><code>datacenters</code><span> بتاعتها، كتير منها بينقل على الـ </span><code>cloud</code><span>، وبيستفيد من خدمات زي </span><code>Amazon Web Services (AWS)</code><span> و </span><code>Microsoft Azure</code><span> و </span><code>Google Cloud Platform (GCP)</code><span>. بدل ما يستثمروا بشكل كبير في الـ </span><code>hardware</code><span>، فرق </span><code>Ops</code><span> كتير بقت بتقضي كل وقتها بتشتغل على </span><code>software</code><span>، وبيستخدموا أدوات زي </span><code>Chef</code><span>، و</span><code>Puppet</code><span>، و</span><code>Terraform</code><span>، و</span><code>Docker</code><span>، و</span><code>Kubernetes</code><span>. بدل ما يركبوا </span><code>servers</code><span> ويوصلوا كابلات شبكة، كتير من الـ </span><code>sysadmins</code><span> بقوا بيكتبوا </span><code>code</code><span>.</span></p><p><span>نتيجة لده، الـ </span><code>Devs</code><span> والـ </span><code>Ops</code><span> الاتنين بقوا بيقضوا معظم وقتهم شغالين على </span><code>software</code><span>، والفرق بين الفريقين مبقاش واضح زي زمان. ممكن لسه يكون منطقي إن يكون فيه فريق </span><code>Dev</code><span> مسؤول عن الـ </span><code>application code</code><span> وفريق </span><code>Ops</code><span> مسؤول عن الـ </span><code>operational code</code><span>، بس بقى واضح إن الـ </span><code>Devs</code><span> والـ </span><code>Ops</code><span> محتاجين يشتغلوا مع بعض بشكل أقرب. ومن هنا جه مفهوم الـ </span><code>DevOps</code><span>.</span></p><p><span>الـ </span><code>DevOps</code><span> مش اسم فريق أو مسمى وظيفي أو تكنولوجيا معينة. بالعكس، هو مجموعة من العمليات والأفكار والتقنيات. كل واحد عنده تعريف مختلف شوية للـ </span><code>DevOps</code><span>، بس في الكتاب ده، هنمشي بالتعريف ده:</span></p><p><strong><span>الهدف من الـ </span><code>DevOps</code><span> هو إننا نخلي عملية الـ </span><code>software delivery</code><span> أكفأ بكتير جدًا.</span></strong></p><p><span>بدل كوابيس الـ </span><code>merge</code><span> اللي بتاخد أيام، أنت بتدمج الـ </span><code>code</code><span> بشكل مستمر (</span><code>continuously</code><span>) وبتخليه دايمًا في حالة جاهزة للـ </span><code>deploy</code><span>. بدل ما تعمل </span><code>deploy</code><span> للـ </span><code>code</code><span> مرة كل شهر، تقدر تعمل </span><code>deploy</code><span> عشرات المرات في اليوم، أو حتى بعد كل </span><code>commit</code><span>. وبدل الانقطاعات والـ </span><code>downtime</code><span> المستمر، أنت بتبني أنظمة مرنة وبتصلح نفسها بنفسها (</span><code>resilient, self-healing systems</code><span>) وبتستخدم الـ </span><code>monitoring</code><span> والـ </span><code>alerting</code><span> عشان تكتشف المشاكل اللي مش بتتحل أوتوماتيك.</span></p><p><span>النتائج من الشركات اللي عملت تحول للـ </span><code>DevOps</code><span> مذهلة. على سبيل المثال، شركة Nordstrom لقت إنها بعد ما طبقت ممارسات الـ </span><code>DevOps</code><span>، قدرت تزود عدد الـ </span><code>features</code><span> اللي بتقدمها في الشهر بنسبة 100%، وتقلل العيوب بنسبة 50%، وتقلل وقت التنفيذ (الوقت من أول ما تيجي الفكرة لحد ما الـ </span><code>code</code><span> يشتغل في الـ </span><code>production</code><span>) بنسبة 60%، وتقلل حوادث الـ </span><code>production</code><span> بنسبة من 60% لـ 90%. وبعد ما قسم </span><code>LaserJet Firmware</code><span> في شركة HP بدأ يستخدم ممارسات الـ </span><code>DevOps</code><span>، الوقت اللي المطورين كانوا بيقضوه في تطوير </span><code>features</code><span> جديدة زاد من 5% لـ 40%، وتكاليف التطوير الإجمالية قلت بنسبة 40%. شركة Etsy استخدمت ممارسات الـ </span><code>DevOps</code><span> عشان تتحول من عمليات </span><code>deploy</code><span> نادرة ومسببة للضغط بتعمل انقطاعات كتير، لإنها تعمل </span><code>deploy</code><span> من 25 لـ 50 مرة في اليوم، مع انقطاعات أقل بكتير.</span></p><p><span>فيه أربع قيم أساسية في حركة الـ </span><code>DevOps</code><span>: الثقافة (Culture)، الأتمتة (Automation)، القياس (Measurement)، والمشاركة (Sharing) (وساعات بيختصروها في كلمة CAMS). الكتاب ده مش هدفه يقدم شرح شامل للـ </span><code>DevOps</code><span> (بص على ملحق ِa او أ عشان تشوف ترشيحات قراءة)، عشان كده أنا هركز بس على قيمة واحدة من القيم دي:  automation.</span></p><p><span>الهدف هو automation أكبر قدر ممكن من عملية الـ </span><code>software delivery</code><span>. وده معناه إنك بتدير الـ </span><code>infrastructure</code><span> بتاعتك مش عن طريق إنك تدوس على حاجات في صفحة ويب أو تنفذ أوامر </span><code>shell</code><span> يدويًا، لكن عن طريق الـ </span><code>code</code><span>. وده مفهوم عادة بيتسمى </span><code>infrastructure as code</code><span>.</span></p><h3 id='إيه-هو-الـ-infrastructure-as-code'><strong><span>إيه هو الـ </span><code>Infrastructure as Code</code><span>؟</span></strong></h3><p><span>الفكرة ورا الـ </span><code>infrastructure as code (IaC)</code><span> هي إنك بتكتب وتنفذ </span><code>code</code><span> عشان تعرف (</span><code>define</code><span>)، وتنشر (</span><code>deploy</code><span>)، وتحدّث (</span><code>update</code><span>)، وتمسح (</span><code>destroy</code><span>) الـ </span><code>infrastructure</code><span> بتاعتك. ده بيمثل تحول مهم في طريقة التفكير، بحيث إنك بتعامل كل جوانب الـ </span><code>operations</code><span> كأنها </span><code>software</code><span>—حتى الجوانب اللي بتمثل </span><code>hardware</code><span> (زي تجهيز الـ </span><code>servers</code><span> المادية). في الحقيقة، واحدة من الأفكار الأساسية في الـ </span><code>DevOps</code><span> هي إنك تقدر تدير كل حاجة تقريبًا بالـ </span><code>code</code><span>، وده بيشمل الـ </span><code>servers</code><span>، والـ </span><code>databases</code><span>، والشبكات، وملفات الـ </span><code>logs</code><span>، والـ </span><code>application configuration</code><span>، والـ </span><code>documentation</code><span>، والـ </span><code>automated tests</code><span>، وعمليات الـ </span><code>deployment</code><span>، وهكذا.</span></p><p><span>فيه خمس فئات رئيسية لأدوات الـ </span><code>IaC</code><span>:</span></p><ul><li><p><code>Ad hoc scripts</code></p></li><li><p><code>Configuration management tools</code></p></li><li><p><code>Server templating tools</code></p></li><li><p><code>Orchestration tools</code></p></li><li><p><code>Provisioning tools</code></p></li></ul><p><span>يلا نبص عليهم واحدة واحدة.</span></p><h4 id='ad-hoc-scripts'><strong><span>Ad Hoc Scripts</span></strong></h4><p><span>أبسط طريقة لـautomation أي حاجة هي إنك تكتب </span><code>ad hoc script</code><span>. بتاخد أي مهمة كنت بتعملها يدوي، تقسمها لخطوات منفصلة، تستخدم لغة الـ </span><code>scripting</code><span> اللي بتحبها (زي </span><code>Bash</code><span> أو </span><code>Ruby</code><span> أو </span><code>Python</code><span>) عشان تعرف كل خطوة من دول في </span><code>code</code><span>، وتشغل الـ </span><code>script</code><span> ده على الـ </span><code>server</code><span> بتاعك، زي ما هو واضح في شكل 1-1.</span></p><p><img src="imgs/image-20250615061952987.png" referrerpolicy="no-referrer" alt="image-20250615061952987"></p><p><span>على سبيل المثال، ده </span><code>Bash script</code><span> اسمه </span><code>setup-webserver.sh</code><span> بيعمل </span><code>configure</code><span> لـ </span><code>web server</code><span> عن طريق إنه بيعمل </span><code>install</code><span> للـ </span><code>dependencies</code><span>، وبيسحب شوية </span><code>code</code><span> من </span><code>Git repo</code><span>، وبيقوّم </span><code>Apache web server</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="bash"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="bash"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0234px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">sudo</span> apt-get update</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">sudo</span> apt-get install <span class="cm-attribute">-y</span> php apache2</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">sudo</span> <span class="cm-builtin">git</span> clone https://github.com/brikis98/php-app.git /var/www/html/app</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">sudo</span> <span class="cm-builtin">service</span> apache2 <span class="cm-builtin">start</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 246px;"></div><div class="CodeMirror-gutters" style="display: none; height: 246px;"></div></div></div></pre><p><span>أحلى حاجة في الـ </span><code>ad hoc scripts</code><span> هي إنك تقدر تستخدم لغات برمجة مشهورة وعامة</span>
+<span> (</span><code>general-purpose</code><span>)، وتقدر تكتب الـ </span><code>code</code><span> بأي طريقة تعجبك. وأسوأ حاجة في الـ </span><code>ad hoc scripts</code><span> هي إنك تقدر تستخدم لغات برمجة مشهورة وعامة، وتقدر تكتب الـ </span><code>code</code><span> بأي طريقة تعجبك العيب هنا مفيش طريقة كتابة موحدة .</span></p><p><span>في حين إن الأدوات اللي معمولة مخصوص للـ </span><code>IaC</code><span> بتقدم </span><code>APIs</code><span> مختصرة عشان تنجز مهام معقدة، لو أنت بتستخدم لغة برمجة عامة، هتحتاج تكتب </span><code>code</code><span> مخصوص تمامًا لكل مهمة. وكمان، الأدوات المصممة للـ </span><code>IaC</code><span> عادةً بتفرض </span><code>structure</code><span> معين على الـ </span><code>code</code><span> بتاعك، في حين إن مع لغة البرمجة العامة، كل </span><code>developer</code><span> هيستخدم أسلوبه الخاص وهيعمل حاجة مختلفة. ولا مشكلة من دول بتبقى حاجة كبيرة بالنسبة لـ </span><code>script</code><span> من 8 سطور بيعمل </span><code>install</code><span> لـ </span><code>Apache</code><span>، بس الموضوع بيبقى فوضى لو حاولت تستخدم </span><code>ad hoc scripts</code><span> عشان تدير عشرات الـ </span><code>servers</code><span>، والـ </span><code>databases</code><span>، والـ </span><code>load balancers</code><span>، والـ </span><code>network configurations</code><span>، وهكذا.</span></p><p><span>لو عمرك اضطريت تعمل </span><code>maintain</code><span> لـ </span><code>repository</code><span> كبير من الـ </span><code>Bash scripts</code><span>، هتبقى عارف إن الموضوع دايمًا تقريبًا بيتحول لكومة </span><code>spaghetti code</code><span> فوضوية ومستحيل تعملها صيانة (</span><code>unmaintainable</code><span>). الـ </span><code>Ad hoc scripts</code><span> ممتازة للمهام الصغيرة اللي بتتعمل مرة واحدة (</span><code>one-off tasks</code><span>)، بس لو أنت هتدير كل الـ </span><code>infrastructure</code><span> بتاعتك كـ </span><code>code</code><span>، يبقى لازم تستخدم أداة </span><code>IaC</code><span> معمولة مخصوص للمهمة دي.</span></p><p>&nbsp;</p><h2 id='أدوات-الـ-configuration-management'><strong><span>أدوات الـ </span><code>Configuration Management</code></strong></h2><p><code>Chef</code><span>، و</span><code>Puppet</code><span>، و</span><code>Ansible</code><span> كلهم أدوات </span><code>configuration management</code><span>، وده معناه إنهم مصممين عشان يعملوا </span><code>install</code><span> ويديروا </span><code>software</code><span> على </span><code>servers</code><span> موجودة فعلًا. على سبيل المثال، ده </span>
+<code>Ansible role</code><span> اسمه </span><code>web-server.yml</code><span> بيعمل </span><code>configure</code><span> لنفس الـ </span><code>Apache web server</code><span> اللي عملناه بالـ </span><code>script</code><span> اللي اسمه </span><code>setup-webserver.sh</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="yaml" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="yaml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0234px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">- </span><span class="cm-atom">name</span><span class="cm-meta">: </span>Update the apt-get cache</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  apt</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  update_cache</span><span class="cm-meta">: </span><span class="cm-keyword">yes</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">- </span><span class="cm-atom">name</span><span class="cm-meta">: </span>Install PHP</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  apt</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  name</span><span class="cm-meta">: </span>php</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">- </span><span class="cm-atom">name</span><span class="cm-meta">: </span>Install Apache</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  apt</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  name</span><span class="cm-meta">: </span>apache2</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">- </span><span class="cm-atom">name</span><span class="cm-meta">: </span>Copy the code from the repository</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  git</span><span class="cm-meta">: </span>repo=https<span class="cm-meta">:</span>//github.com/brikis98/php-app.git dest=/var/www/html/app</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">- </span><span class="cm-atom">name</span><span class="cm-meta">: </span>Start Apache</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  service</span><span class="cm-meta">: </span>name=apache2 state=started enabled=yes</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 381px;"></div><div class="CodeMirror-gutters" style="display: none; height: 381px;"></div></div></div></pre><p><span>الكود شكله شبه الـ </span><code>Bash script</code><span>، بس استخدام أداة زي </span><code>Ansible</code><span> بتقدم عدد من المزايا:</span></p><ul><li><p><strong><span>قواعد كتابة الكود (</span><code>Coding conventions</code><span>)</span></strong>
+<code>Ansible</code><span> بيفرض </span><code>structure</code><span> ثابت ومتوقع، وده بيشمل الـ </span><code>documentation</code><span>، و </span><code>file layout</code><span>، و</span><code>parameters</code><span> ليها أسماء واضحة، وإدارة الـ </span><code>secrets</code><span>، وهكذا. في حين إن كل </span><code>developer</code><span> بينظم الـ </span><code>ad hoc scripts</code><span> بتاعته بطريقة مختلفة، معظم أدوات </span>
+<span>الـ </span><code>configuration management</code><span> بتيجي معاها مجموعة من القواعد (</span><code>conventions</code><span>) اللي بتخلي تصفح الكود أسهل.</span></p></li><li><p><strong><span>الـ </span><code>Idempotence</code></strong>
+<span>إنك تكتب </span><code>ad hoc script</code><span> يشتغل مرة واحدة مش صعب أوي؛ الصعب بجد إنك تكتب </span><code>ad hoc script</code><span> يشتغل صح حتى لو شغلته مرة ورا مرة. كل مرة تيجي تعمل </span><code>folder</code><span> في الـ </span><code>script</code><span> بتاعك، لازم تفتكر تعمل </span><code>check</code><span> الأول إذا كان الـ </span><code>folder</code><span> ده موجود أصلًا؛ كل مرة تضيف سطر </span><code>configuration</code><span> في ملف، لازم تعمل </span><code>check</code><span> إن السطر ده مش موجود أصلًا؛ كل مرة عايز تشغل </span><code>app</code><span>، لازم تعمل </span><code>check</code><span> إن الـ </span><code>app</code><span> ده مش شغال أصلًا.</span></p><p><span>الـ </span><code>Code</code><span> اللي بيشتغل صح بغض النظر عن عدد المرات اللي شغلته فيها بيتسمى </span><code>idempotent code</code><span>. عشان تخلي الـ </span><code>Bash script</code><span> اللي فات </span><code>idempotent</code><span>، هتحتاج تزود سطور كود كتير، </span>
+<span>فيها </span><code>if-statements</code><span> كتير. على الناحية التانية، معظم الـ </span><code>functions</code><span> بتاعة </span><code>Ansible</code><span> بتبقى </span><code>idempotent</code><span> بشكل افتراضي (</span><code>by default</code><span>). على سبيل المثال، الـ </span><code>Ansible role</code><span> اللي اسمه </span><code>web-server.yml</code><span> هيعمل </span><code>install</code><span> لـ </span><code>Apache</code><span> بس لو هو مش معمول له </span><code>install</code><span> أصلًا، وهيحاول يبدأ الـ </span><code>Apache web server</code><span> بس لو هو مش شغال أصلًا.</span></p></li><li><p><strong><span>التوزيع (</span><code>Distribution</code><span>)</span></strong>
+<span>الـ </span><code>Ad hoc scripts</code><span> مصممة عشان تشتغل على جهاز واحد </span><code>local</code><span>. </span><code>Ansible</code><span> وأدوات الـ </span><code>configuration management</code><span> التانية مصممة مخصوص عشان تدير أعداد كبيرة من</span>
+<span> الـ </span><code>remote servers</code><span>، زي ما هو واضح في شكل 1-2.</span></p></li></ul><p><img src="imgs/image-20250615062701773.png" referrerpolicy="no-referrer" alt="image-20250615062701773"></p><p><span>على سبيل المثال، عشان تطبق الـ </span><code>role</code><span> اللي اسمه </span><code>web-server.yml</code><span> على خمسة </span><code>servers</code><span>، أول حاجة بتعمل ملف اسمه </span><code>hosts</code><span> فيه الـ </span><code>IP addresses</code><span> بتاعة الـ </span><code>servers</code><span> دي:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="ini"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="ini"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0234px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-header">[webservers]</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">11.11.11.11</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">11.11.11.12</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">11.11.11.13</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">11.11.11.14</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">11.11.11.15</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 134px;"></div><div class="CodeMirror-gutters" style="display: none; height: 134px;"></div></div></div></pre><p><span>بعد كده، بتعرّف الـ </span><code>Ansible playbook</code><span> ده:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="yaml"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="yaml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0234px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">- </span><span class="cm-atom">hosts</span><span class="cm-meta">: </span>webservers</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  roles</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta"> &nbsp;  - </span>webserver</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 67px;"></div><div class="CodeMirror-gutters" style="display: none; height: 67px;"></div></div></div></pre><p><span>وفي الآخر، بتنفذ الـ </span><code>playbook</code><span> بالشكل ده:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="bash"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="bash"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0234px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">ansible-playbook playbook.yml</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p><span>ده بيخلي </span><code>Ansible</code><span> يعمل </span><code>configure</code><span> للخمسة </span><code>servers</code><span> كلهم </span><code>in parallel</code><span> (على التوازي).</span></p><p><span>أو كحل بديل، عن طريق إنك تظبط </span><code>parameter</code><span> اسمه </span><code>serial</code><span> في الـ </span><code>playbook</code><span>، تقدر تعمل حاجة اسمها </span><code>rolling deployment</code><span>، وده بيحدّث الـ </span><code>servers</code><span> على دفعات (</span><code>batches</code><span>). على سبيل المثال، لما تظبط </span><code>serial</code><span> على </span><code>2</code><span>، ده بيخلي </span><code>Ansible</code><span> يحدّث اتنين </span><code>servers</code><span> في كل مرة، لحد ما الخمسة كلهم يخلصوا. عشان تكرر أي جزء من الـ </span><code>logic</code><span> ده في </span><code>ad hoc script</code><span>، هتحتاج عشرات، أو يمكن مئات، من سطور الـ </span><code>code</code><span>.</span></p><h3 id='أدوات-الـ-server-templating'><strong><span>أدوات الـ </span><code>Server Templating</code></strong></h3><p><span>بديل للـ </span><code>configuration management</code><span> شعبيته بتزيد مؤخرًا هو أدوات الـ </span><code>server templating</code><span> زي </span><code>Docker</code><span>، و</span><code>Packer</code><span>، و</span><code>Vagrant</code><span>. بدل ما تشغّل مجموعة </span><code>servers</code><span> وتعملهم </span><code>configure</code><span> بإنك تشغل نفس الـ </span><code>code</code><span> على كل واحد فيهم، الفكرة ورا أدوات الـ </span><code>server templating</code><span> هي إنك تعمل </span><code>image</code><span> من الـ </span><code>server</code><span>. الـ </span><code>image</code><span> دي بتكون زي &quot;صورة&quot; أو </span><code>snapshot</code><span> كاملة ومتكاملة من نظام التشغيل (</span><code>OS</code><span>)، والـ </span><code>software</code><span>، والملفات، وكل التفاصيل التانية المهمة. بعد كده تقدر تستخدم أداة </span><code>IaC</code><span> تانية عشان تعمل </span><code>install</code><span> للـ </span><code>image</code><span> دي على كل الـ </span><code>servers</code><span> بتاعتك، زي ما هو واضح في شكل 1-3.</span></p><p><img src="imgs/image-20250615063036524.png" referrerpolicy="no-referrer" alt="image-20250615063036524"></p><p><img src="imgs/image-20250615063102468.png" referrerpolicy="no-referrer" alt="image-20250615063102468"></p><p><span>فيه فئتين كبار من الأدوات اللي بتتعامل مع الـ </span><code>images</code><span> (شكل 1-4):</span></p><ul><li><p><strong><code>Virtual machines</code></strong>
+<span>الـ </span><code>virtual machine (VM)</code><span> بتحاكي نظام كمبيوتر كامل، بما في ذلك الـ </span><code>hardware</code><span>. أنت بتشغّل </span><code>hypervisor</code><span>، زي </span><code>VMware</code><span>، </span><code>VirtualBox</code><span>، أو </span><code>Parallels</code><span>، عشان تعمل </span><code>virtualize</code><span> </span></p><p><span>الميزة في ده إن أي </span><code>VM image</code><span> بتشغلها فوق الـ </span><code>hypervisor</code><span> بتقدر تشوف بس الـ </span><code>hardware</code><span> اللي معمول له </span><code>virtualize</code><span>، فبتبقى معزولة تمامًا عن الـ </span><code>host machine</code><span> وأي </span><code>VM images</code><span> تانية، وهتشتغل بنفس الطريقة بالظبط في كل الـ </span><code>environments</code><span> (زي جهازك، أو </span><code>QA server</code><span>، أو </span><code>production server</code><span>). العيب هو إن عملية الـ </span><code>virtualization</code><span> لكل الـ </span><code>hardware</code><span> ده وتشغيل </span><code>OS</code><span> منفصل تمامًا لكل </span><code>VM</code><span> بيسبب </span><code>overhead</code><span> كبير من ناحية استهلاك الـ </span><code>CPU</code><span>، واستهلاك الـ </span><code>memory</code><span>، ووقت التشغيل (</span><code>startup time</code><span>). تقدر تعرّف الـ </span><code>VM images</code><span> كـ </span><code>code</code><span> باستخدام أدوات زي </span>
+<code>Packer</code><span> و</span><code>Vagrant</code><span>.</span></p></li><li><p><strong><code>Containers</code></strong>
+<span>الـ </span><code>container</code><span> بيحاكي الـ </span><code>user space</code><span> بتاع الـ </span><code>OS</code><span>. أنت بتشغّل </span><code>container engine</code><span>، زي </span><code>Docker</code><span>، أو </span><code>CoreOS rkt</code><span>، أو </span><code>cri-o</code><span>، عشان تعمل </span><code>processes</code><span> معزولة، و</span><code>memory</code><span>، و</span><code>mount points</code><span>، و</span><code>networking</code><span>.</span></p><p><span>الميزة في ده إن أي </span><code>container</code><span> بتشغله فوق الـ </span><code>container engine</code><span> بيقدر يشوف بس الـ </span><code>user space</code><span> بتاعه، فبيبقى معزول عن الـ </span><code>host machine</code><span> والـ </span><code>containers</code><span> التانية، وهيشتغل بنفس الطريقة بالظبط في كل الـ </span><code>environments</code><span> (جهازك، </span><code>QA server</code><span>، </span><code>production server</code><span>، إلخ). العيب هو إن كل الـ </span><code>containers</code><span> اللي شغالة على </span><code>server</code><span> واحد بتشارك نفس الـ </span><code>kernel</code><span> والـ </span><code>hardware</code><span> بتاع الـ </span><code>OS</code><span> بتاع السيرفر ده، فبيبقى أصعب بكتير إنك توصل لنفس مستوى العزل والأمان اللي بتاخده مع الـ </span><code>VM</code><span>. بس، عشان الـ </span><code>kernel</code><span> والـ </span><code>hardware</code><span> مشتركين، الـ </span><code>containers</code><span> بتاعتك بتقدر تقوم في أجزاء من الثانية (</span><code>milliseconds</code><span>) وتقريبًا مفيش أي </span><code>overhead</code><span> على الـ </span><code>CPU</code><span> أو الـ </span><code>memory</code><span>. تقدر تعرّف الـ </span><code>container images</code><span> كـ </span><code>code</code><span> باستخدام أدوات زي </span><code>Docker</code><span> و</span><code>CoreOS rkt</code><span>؛ وهتشوف مثال على إزاي تستخدم </span><code>Docker</code><span> في الفصل السابع.</span></p><p><img src="imgs/image-20250615063449405.png" referrerpolicy="no-referrer" alt="image-20250615063449405"></p></li></ul><p><img src="imgs/image-20250615063501011.png" referrerpolicy="no-referrer" alt="image-20250615063501011"></p><p>&nbsp;</p><p><span>على سبيل المثال، ده </span><code>Packer template</code><span> اسمه </span><code>web-server.json</code><span> بيعمل </span><code>Amazon Machine Image (AMI)</code><span>، ودي عبارة عن </span><code>VM image</code><span> تقدر تشغلها على </span><code>AWS</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="json" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="json"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 61.815px; left: 150.469px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-string cm-property">"builders"</span>: [{</span></pre><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"ami_name"</span>: <span class="cm-string">"packer-example-"</span>,</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"instance_type"</span>: <span class="cm-string">"t2.micro"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"region"</span>: <span class="cm-string">"us-east-2"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"type"</span>: <span class="cm-string">"amazon-ebs"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"source_ami"</span>: <span class="cm-string">"ami-0fb653ca2d3203ac1"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"ssh_username"</span>: <span class="cm-string">"ubuntu"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }],</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-string cm-property">"provisioners"</span>: [{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"type"</span>: <span class="cm-string">"shell"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"inline"</span>: [</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-string">"sudo apt-get update"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-string">"sudo apt-get install -y php apache2"</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-string">"sudo git clone https://github.com/brikis98/php-app.git /var/www/html/app"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  ],</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"environment_vars"</span>: [</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;<span class="cm-string">"DEBIAN_FRONTEND=noninteractive"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  ],</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-string cm-property">"pause_before"</span>: <span class="cm-string">"60s"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  }]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 515px;"></div><div class="CodeMirror-gutters" style="display: none; height: 515px;"></div></div></div></pre><p><span>الـ </span><code>Packer template</code><span> ده بيعمل </span><code>configure</code><span> لنفس الـ </span><code>Apache web server</code><span> اللي شفته في </span><code>setup-webserver.sh</code><span> باستخدام نفس كود الـ </span><code>Bash</code><span>. الفرق الوحيد بين الكود في الـ </span><code>Packer template</code><span> والأمثلة اللي فاتت هو إن الـ </span><code>Packer template</code><span> ده مش بيبدأ الـ </span><code>Apache web server</code><span> (يعني مش بينفذ أمر زي </span><code>sudo service apache2 start</code><span>). وده لأن الـ </span><code>server templates</code><span> عادةً بتستخدم عشان تعمل </span><code>install</code><span> للـ </span><code>software</code><span> في الـ </span><code>images</code><span>، لكن لما بتشغل الـ </span><code>image</code><span> بس —زي مثلًا لما بتعملها </span><code>deploy</code><span> على </span><code>server</code><span>— هو ده الوقت اللي المفروض تشغل فيه الـ </span><code>software</code><span> ده فعلًا.</span></p><p><span>عشان تبني </span><code>AMI</code><span> من الـ</span><code>template</code><span> ده، شغّل </span><code>packer build webserver.json</code><span>. بعد ما الـ </span><code>build</code><span> يخلص، تقدر تعمل </span><code>install</code><span> للـ </span><code>AMI</code><span> دي على كل الـ </span><code>AWS servers</code><span> بتاعتك، وتعمل </span><code>configure</code><span> لكل </span><code>server</code><span> إنه يشغّل </span><code>Apache</code><span> لما الـ </span><code>server</code><span> بيعمل </span><code>booting</code><span> (وهتشوف مثال على ده في الجزء الجاي)، وكلهم هيشتغلوا بنفس الطريقة بالظبط.</span></p><p><span>خد بالك إن أدوات الـ </span><code>server templating</code><span> المختلفة ليها أغراض مختلفة شوية. </span><code>Packer</code><span> عادةً بيستخدم عشان يعمل </span><code>images</code><span> بتشغلها مباشرة على </span><code>production servers</code><span>، زي </span><code>AMI</code><span> بتشغلها في </span>
+<span>الـ </span><code>production AWS account</code><span> بتاعك. </span><code>Vagrant</code><span> عادةً بيستخدم عشان يعمل </span><code>images</code><span> بتشغلها على أجهزة الـ </span><code>development</code><span> بتاعتك، زي </span><code>VirtualBox image</code><span> بتشغلها على اللابتوب بتاعك سواء </span><code>Mac</code><span> أو </span><code>Windows</code><span>. </span><code>Docker</code><span> عادةً بيستخدم عشان يعمل </span><code>images</code><span> لـ </span><code>applications</code><span> منفردة. تقدر تشغل الـ </span><code>Docker images</code><span> على أجهزة الـ </span><code>production</code><span> أو الـ </span><code>development</code><span>، طالما فيه أداة تانية عملت </span><code>configure</code><span> للجهاز ده بالـ </span><code>Docker Engine</code><span>. على سبيل المثال، فيه]</span><code>pattern</code><span>شائع هو إنك تستخدم </span><code>Packer</code><span> عشان تعمل </span><code>AMI</code><span> يكون عليها </span><code>Docker Engine</code><span>، وبعدين تعمل </span><code>deploy</code><span> للـ </span><code>AMI</code><span> دي على </span><code>cluster</code><span> من الـ </span><code>servers</code><span> في الـ </span><code>AWS account</code><span> بتاعك، وبعدين تعمل </span><code>deploy</code><span> لـ </span><code>Docker containers</code><span> منفردة على الـ </span><code>cluster</code><span> ده عشان تشغل الـ </span><code>applications</code><span> بتاعتك.</span></p><p><span>الـ </span><code>Server templating</code><span> هو مكون أساسي في التحول لـ </span><code>immutable infrastructure</code><span>. الفكرة دي مستوحاة من الـ </span><code>functional programming</code><span>، اللي فيها  </span><code>variables</code><span> بتكون </span><code>immutable</code><span>، فبعد ما تدي للمتغير قيمة، متقدرش تغير المتغير ده تاني أبدًا. لو محتاج تحدث حاجة، بتعمل متغير جديد. عشان المتغيرات عمرها ما بتتغير، بيبقى أسهل بكتير إنك تفهم الـ </span><code>code</code><span> بتاعك.</span></p><p><span>الفكرة ورا الـ </span><code>immutable infrastructure</code><span> شبهها: بمجرد ما تعمل </span><code>deploy</code><span> لـ </span><code>server</code><span>، أنت عمرك ما بتعمل عليه تغييرات تاني. لو محتاج تحدث حاجة، زي إنك تعمل </span><code>deploy</code><span> لـ </span><code>version</code><span> جديدة من الـ </span><code>code</code><span> بتاعك، أنت بتعمل </span><code>image</code><span> جديدة من الـ </span><code>server template</code><span> بتاعك وتعملها </span><code>deploy</code><span> على </span><code>server</code><span> جديد. عشان الـ </span><code>servers</code><span> عمرها ما بتتغير، بيبقى أسهل بكتير إنك تفهم إيه اللي معمول له `depl</span></p><h3 id='أدوات-الـ-orchestration'><strong><span>أدوات الـ </span><code>Orchestration</code></strong></h3><p><span>أدوات الـ </span><code>Server templating</code><span> ممتازة عشان تعمل </span><code>VMs</code><span> و </span><code>containers</code><span>، بس إزاي بتعملهم </span><code>manage</code><span> فعلًا؟ لمعظم الـ </span><code>use cases</code><span> اللي على أرض الواقع، هتحتاج طريقة تعمل بيها الحاجات دي:</span></p><ul><li><p><span>تعمل </span><code>deploy</code><span> للـ </span><code>VMs</code><span> والـ </span><code>containers</code><span>، وتستغل الـ </span><code>hardware</code><span> بتاعك بكفاءة.</span></p></li><li><p><span>تعمل </span><code>roll out</code><span> للـ </span><code>updates</code><span> لأسطول موجود من الـ </span><code>VMs</code><span> والـ </span><code>containers</code><span> باستخدام استراتيجيات زي </span><code>rolling deployment</code><span>، و</span><code>blue-green deployment</code><span>، و</span><code>canary deployment</code><span>.</span></p></li><li><p><span>تراقب (</span><code>health</code><span>) الـ </span><code>VMs</code><span> والـ </span><code>containers</code><span> بتاعتك، وتبدل اللي مش سليم منهم أوتوماتيك (</span><code>auto healing</code><span>).</span></p></li><li><p><span>تعمل </span><code>scale</code><span> لعدد الـ </span><code>VMs</code><span> والـ </span><code>containers</code><span> سواء بالزيادة أو النقصان كاستجابة</span>
+<span> للـ </span><code>load</code><span> (</span><code>auto scaling</code><span>).</span></p></li><li><p><span>توزع الـ </span><code>traffic</code><span> على الـ </span><code>VMs</code><span> والـ </span><code>containers</code><span> بتاعتك (</span><code>load balancing</code><span>).</span></p></li><li><p><span>تسمح للـ </span><code>VMs</code><span> والـ </span><code>containers</code><span> بتاعتك إنها تلاقي وتكلم بعضها على الشبكة </span>
+<span>(</span><code>service discovery</code><span>).</span></p></li></ul><p><span>التعامل مع المهام دي هو شغل أدوات الـ </span><code>orchestration</code><span> زي </span><code>Kubernetes</code><span>، و</span><code>Marathon/Mesos</code><span>، و</span><code>Amazon Elastic Container Service (Amazon ECS)</code><span>، و</span><code>Docker Swarm</code><span>، و</span><code>Nomad</code><span>. على سبيل المثال، </span><code>Kubernetes</code><span> بيسمح لك تعرّف إزاي تعمل </span><code>manage</code><span> للـ </span><code>Docker containers</code><span> بتاعتك كـ </span><code>code</code><span>. أنت الأول بتعمل </span><code>deploy</code><span> لـ </span><code>Kubernetes cluster</code><span>، وده عبارة عن مجموعة </span><code>servers</code><span> هيعملها </span><code>Kubernetes</code><span> </span><code>manage</code><span> ويستخدمها عشان يشغّل الـ </span><code>Docker containers</code><span> بتاعتك. معظم مزودي خدمات الـ </span><code>cloud</code><span> الكبار عندهم دعم أساسي عشان تعمل </span><code>deploy</code><span> لـ </span><code>Kubernetes clusters</code><span> مُدارة (</span><code>managed</code><span>)، زي </span><code>Amazon Elastic Kubernetes Service (EKS)</code><span>، و</span><code>Google Kubernetes Engine (GKE)</code><span>، و</span><code>Azure Kubernetes Service (AKS)</code><span>.</span></p><p><span>لما يبقى عندك </span><code>cluster</code><span> شغال، تقدر تعرّف إزاي تشغل الـ </span><code>Docker container</code><span> بتاعك كـ </span><code>code</code><span> في ملف </span><code>YAML</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="yaml" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="yaml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0231px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">apiVersion</span><span class="cm-meta">: </span>apps/v1</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">kind</span><span class="cm-meta">: </span>Deployment</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">metadata</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  name</span><span class="cm-meta">: </span>example-app</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">spec</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  selector</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  matchLabels</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  app</span><span class="cm-meta">: </span>example-app</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  replicas</span><span class="cm-meta">: </span><span class="cm-number">3</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  strategy</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  rollingUpdate</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  maxSurge</span><span class="cm-meta">: </span><span class="cm-number">3</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  maxUnavailable</span><span class="cm-meta">: </span><span class="cm-number">0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  type</span><span class="cm-meta">: </span>RollingUpdate</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  template</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  metadata</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  labels</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp; &nbsp;  app</span><span class="cm-meta">: </span>example-app</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  spec</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  containers</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta"> &nbsp; &nbsp;  - </span><span class="cm-atom">name</span><span class="cm-meta">: </span>example-app</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp; &nbsp;  image</span><span class="cm-meta">: </span>httpd<span class="cm-meta">:</span><span class="cm-number">2.4.39</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp; &nbsp;  ports</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta"> &nbsp; &nbsp; &nbsp;  - </span><span class="cm-atom">containerPort</span><span class="cm-meta">: </span><span class="cm-number">80</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 537px;"></div><div class="CodeMirror-gutters" style="display: none; height: 537px;"></div></div></div></pre><p><span>الملف ده بيدي تعليمات لـ </span><code>Kubernetes</code><span> إنه يعمل </span><code>Deployment</code><span>، ودي طريقة </span><code>declarative</code><span> (توصيفية) عشان تعرّف الحاجات دي:</span></p><ul><li><p><span>واحد أو أكتر من الـ </span><code>Docker containers</code><span> يشتغلوا مع بعض. المجموعة دي من الـ </span><code>containers</code><span> اسمها </span><code>Pod</code><span>. الـ </span><code>Pod</code><span> اللي متعرّف في الكود اللي فوق فيه </span><code>Docker container</code><span> واحد بيشغل </span><code>Apache</code><span>.</span></p></li><li><p><span>الإعدادات لكل </span><code>Docker container</code><span> جوه الـ </span><code>Pod</code><span>. الـ </span><code>Pod</code><span> في الكود اللي فات بيعمل </span><code>configure</code><span> لـ </span><code>Apache</code><span> عشان يستمع على </span><code>port 80</code><span>.</span></p></li><li><p><span>كام نسخة (</span><code>replicas</code><span>) من الـ </span><code>Pod</code><span> دي عايز تشغلها في الـ </span><code>cluster</code><span> بتاعك. الكود اللي فات بيعمل </span><code>configure</code><span> لـ 3 </span><code>replicas</code><span>. </span><code>Kubernetes</code><span> بيحدد أوتوماتيكيًا فين في الـ </span><code>cluster</code><span> بتاعك يعمل </span><code>deploy</code><span> لكل </span><code>Pod</code><span>، باستخدام </span><code>scheduling algorithm</code><span> عشان يختار أفضل </span><code>servers</code><span> من ناحية الـ </span><code>high availability</code><span> (زي إنه يحاول يشغل كل </span><code>Pod</code><span> على </span><code>server</code><span> منفصل عشان لو </span><code>server</code><span> واحد وقع، الـ </span><code>app</code><span> بتاعك ميقعش)، والـ </span><code>resources</code><span> (زي إنه يختار </span><code>servers</code><span> فيها الـ </span><code>ports</code><span> والـ </span><code>CPU</code><span> والـ </span><code>memory</code><span> والموارد التانية المطلوبة متاحة)، والأداء (</span><code>performance</code><span>) (زي إنه يحاول يختار </span><code>servers</code><span> عليها أقل </span><code>load</code><span> وأقل عدد من الـ </span><code>containers</code><span>)، وهكذا. </span><code>Kubernetes</code><span> كمان بيراقب الـ </span><code>cluster</code><span> باستمرار عشان يتأكد إن فيه دايمًا 3 </span><code>replicas</code><span> شغالين، وبيبدل أي </span><code>Pods</code><span> تقع أو تبطل تستجيب أوتوماتيكيًا.</span></p></li><li><p><span>إزاي تعمل </span><code>deploy</code><span> للـ </span><code>updates</code><span>. لما بتعمل </span><code>deploy</code><span> لـ </span><code>version</code><span> جديدة من الـ </span><code>Docker container</code><span>، الكود اللي فات بيعمل </span><code>roll out</code><span> لـ 3 </span><code>replicas</code><span> جديدة، ويستناها لحد ما تبقى </span><code>healthy</code><span>، وبعدين بيمسح الـ 3 </span><code>replicas</code><span> القديمة.</span></p></li></ul><p><span>دي قوة كبيرة في كام سطر </span><code>YAML</code><span> بس! أنت بتشغل </span><code>kubectl apply -f example-app.yml</code><span> عشان تدي تعليمات لـ </span><code>Kubernetes</code><span> إنه يعمل </span><code>deploy</code><span> للـ </span><code>app</code><span> بتاعك. بعد كده تقدر تعمل تغييرات في ملف الـ </span><code>YAML</code><span> وتشغل </span><code>kubectl apply</code><span> تاني عشان تعمل </span><code>roll out</code><span> للـ </span><code>updates</code><span>. تقدر كمان تعمل </span><code>manage</code><span> للـ </span><code>Kubernetes cluster</code><span> والـ </span><code>apps</code><span> اللي جواه باستخدام </span><code>Terraform</code><span>؛ وهتشوف مثال على ده في الفصل السابع.</span></p><h3 id='أدوات-الـ-provisioning'><strong><span>أدوات الـ </span><code>Provisioning</code></strong></h3><p><span>في حين إن أدوات الـ </span><code>configuration management</code><span>، والـ </span><code>server templating</code><span>، والـ </span><code>orchestration</code><span> بتعرّف الكود اللي بيشتغل على كل </span><code>server</code><span>، أدوات الـ </span><code>provisioning</code><span> زي </span><code>Terraform</code><span>، و</span><code>CloudFormation</code><span>، و</span><code>OpenStack Heat</code><span>، و</span><code>Pulumi</code><span> مسؤولة عن إنها تنشئ الـ </span><code>servers</code><span> نفسها. في الحقيقة، أنت تقدر تستخدم أدوات الـ </span><code>provisioning</code><span> عشان تنشئ مش بس </span><code>servers</code><span>، لكن كمان </span><code>databases</code><span>، و</span><code>caches</code><span>، و</span><code>load balancers</code><span>، و</span><code>queues</code><span>، و</span><code>monitoring</code><span>، و</span><code>subnet configurations</code><span>، و</span><code>firewall settings</code><span>، و</span><code>routing rules</code><span>، و</span><code>Secure Sockets Layer (SSL) certificates</code><span>، وتقريبًا كل جانب تاني من الـ </span><code>infrastructure</code><span> بتاعتك، زي ما هو واضح في شكل 1-5.</span></p><p><span>على سبيل المثال، الكود التالي بيعمل </span><code>deploy</code><span> لـ </span><code>web server</code><span> باستخدام </span><code>Terraform</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="hcl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="hcl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0231px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">resource "aws_instance" "app" {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  instance_type &nbsp; &nbsp; = "t2.micro"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  availability_zone = "us-east-2a"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ami &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = "ami-0fb653ca2d3203ac1"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  user_data = &lt;&lt;-EOF</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  #!/bin/bash</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  sudo service apache2 start</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  EOF</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 224px;"></div><div class="CodeMirror-gutters" style="display: none; height: 224px;"></div></div></div></pre><p><span>متقلقش لو لسه مش متعود على بعض الـ </span><code>syntax</code><span>. دلوقتي، ركز بس على اتنين </span><code>parameters</code><span>:</span></p><ul><li><p><code>ami</code>
+<span>الـ </span><code>parameter</code><span> ده بيحدد الـ </span><code>ID</code><span> بتاع </span><code>AMI</code><span> عشان نعملها </span><code>deploy</code><span> على الـ </span><code>server</code><span>.</span>
+<span> أنت ممكن تظبط الـ </span><code>parameter</code><span> ده على الـ </span><code>ID</code><span> بتاع </span><code>AMI</code><span> مبنية من الـ </span><code>Packer template</code><span> اللي اسمه </span><code>web-server.json</code><span> اللي شفناه في الجزء اللي فات، واللي فيه </span><code>PHP</code><span>، و</span><code>Apache</code><span>، والـ </span><code>source code</code><span> بتاع الـ </span><code>application</code><span>.</span></p></li><li><p><code>user_data</code>
+<span>ده </span><code>Bash script</code><span> بيتنفذ لما الـ </span><code>web server</code><span> بيقوم (</span><code>booting</code><span>). الكود اللي فات بيستخدم الـ </span><code>script</code><span> ده عشان يقوّم </span><code>Apache</code><span>.</span></p></li></ul><p><span>بمعنى آخر، الكود ده بيوريك الـ </span><code>provisioning</code><span> والـ </span><code>server templating</code><span> شغالين مع بعض، وده </span><code>pattern</code><span> شائع في الـ </span><code>immutable infrastructure</code><span>.</span></p><p><img src="imgs/image-20250615072023268.png" referrerpolicy="no-referrer" alt="image-20250615072023268"></p><p><img src="imgs/image-20250615072044604.png" referrerpolicy="no-referrer" alt="image-20250615072044604"></p><h2 id='إيه-هي-فوايد-الـ-infrastructure-as-code'><strong><span>إيه هي فوايد الـ </span><code>Infrastructure as Code</code><span>؟</span></strong></h2><p><span>دلوقتي بعد ما شفت كل الأنواع المختلفة من الـ </span><code>IaC</code><span>، سؤال كويس تسأله هو، ليه نتعب نفسنا؟ ليه نتعلم شوية لغات وأدوات جديدة ونشيل نفسنا هم </span><code>code</code><span> زيادة نديرُه؟</span></p><p><span>الإجابة هي إن الـ </span><code>code</code><span> قوي. في مقابل الاستثمار المبدئي بتاع تحويل ممارساتك اليدوية لـ </span><code>code</code><span>، أنت بتاخد تحسينات ضخمة في قدرتك على تسليم الـ </span><code>software</code><span>. حسب تقرير </span><code>State of DevOps</code><span> لسنة 2016، المنظمات اللي بتستخدم ممارسات </span><code>DevOps</code><span>، زي الـ </span><code>IaC</code><span>، بتعمل </span><code>deploy</code><span> أكتر بـ 200 مرة، وبتتعافى من الـ </span><code>failures</code><span> أسرع بـ 24 مرة، والـ </span><code>lead times</code><span> بتاعتها أقل بـ 2,555 مرة.</span></p><p><span>لما الـ </span><code>infrastructure</code><span> بتاعتك بتبقى متعرّفة كـ </span><code>code</code><span>، بتقدر تستخدم مجموعة واسعة من ممارسات الـ </span><code>software engineering</code><span> عشان تحسن عملية الـ </span><code>software delivery</code><span> بتاعتك بشكل كبير، واللي منها الآتي:</span></p><ul><li><p><strong><code>Self-service</code></strong>
+<span>معظم الفرق اللي بتعمل </span><code>deploy</code><span> للكود يدويًا بيبقى عندها عدد قليل من الـ </span><code>sysadmins</code><span> (كتير بيبقى واحد بس) هما بس اللي عارفين كل magic incantations عشان يخلوا الـ </span><code>deployment</code><span> يشتغل وهما بس اللي معاهم </span><code>access</code><span> على الـ </span><code>production</code><span>. ده بيتحول لعنق زجاجة (</span><code>bottleneck</code><span>) كبير مع نمو الشركة. لو الـ </span><code>infrastructure</code><span> بتاعتك متعرّفة في </span><code>code</code><span>، عملية الـ </span><code>deployment</code><span> كلها ممكن تبقى </span><code>automated</code><span>، والـ </span><code>developers</code><span> يقدروا يبدأوا الـ </span><code>deployments</code><span> بتاعتهم بنفسهم وقت ما يحتاجوا.</span></p></li><li><p><strong><span>السرعة والأمان (</span><code>Speed and safety</code><span>)</span></strong>
+<span>لو عملية الـ </span><code>deployment</code><span> معمولة </span><code>automation</code><span>، هتبقى أسرع بكتير، لأن الكمبيوتر يقدر ينفذ خطوات الـ </span><code>deployment</code><span> أسرع بكتير من الإنسان، وأأمن، بما إن العملية الـ </span><code>automated</code><span> هتكون </span><code>consistent</code><span> أكتر، و</span><code>repeatable</code><span> أكتر، ومش عُرضة للخطأ اليدوي.</span></p></li><li><p><strong><span>التوثيق (</span><code>Documentation</code><span>)</span></strong>
+<span>لو حالة الـ </span><code>infrastructure</code><span> بتاعتك محبوسة في دماغ </span><code>sysadmin</code><span> واحد، والـ </span><code>sysadmin</code><span> ده طلع أجازة أو ساب الشركة أو خبطته عربية، ممكن فجأة تكتشف إنك مبقتش قادر تدير الـ </span><code>infrastructure</code><span> بتاعتك. على الناحية التانية، لو الـ </span><code>infrastructure</code><span> بتاعتك متعرّفة كـ </span><code>code</code><span>، فحالة الـ </span><code>infrastructure</code><span> بتاعتك بتبقى في </span><code>source files</code><span> أي حد يقدر يقرأها. بمعنى آخر، الـ </span><code>IaC</code><span> بيشتغل كـ </span><code>documentation</code><span>، وبيسمح لكل الناس في الشركة إنها تفهم الدنيا ماشية إزاي، حتى لو الـ </span><code>sysadmin</code><span> في أجازة.</span></p></li><li><p><strong><code>Version control</code></strong>
+<span>تقدر تخزن ملفات الـ </span><code>source</code><span> بتاعة الـ </span><code>IaC</code><span> بتاعتك في </span><code>version control</code><span>، وده معناه إن تاريخ الـ </span><code>infrastructure</code><span> بتاعك بالكامل بقى متسجل في الـ </span><code>commit log</code><span>. وده بيتحول لأداة قوية عشان تعمل </span><code>debug</code><span> للمشاكل، لأنه في أي وقت تظهر مشكلة، أول خطوة هتعملها هي إنك تبص على الـ </span><code>commit log</code><span> وتعرف إيه اللي اتغير في الـ </span><code>infrastructure</code><span> بتاعتك، وتاني خطوة ممكن تكون إنك تحل المشكلة ببساطة بإنك ترجع لـ </span><code>version</code><span> قديمة ومعروف إنها سليمة (</span><code>known-good</code><span>) من كود الـ </span><code>IaC</code><span> بتاعك.</span></p></li><li><p><strong><span>التحقق (</span><code>Validation</code><span>)</span></strong>
+<span>لو حالة الـ </span><code>infrastructure</code><span> بتاعتك متعرّفة في </span><code>code</code><span>، فمع كل تغيير، تقدر تعمل </span><code>code review</code><span>، وتشغل مجموعة </span><code>automated tests</code><span>، وتعدّي الـ </span><code>code</code><span> على أدوات </span><code>static analysis</code><span>—وكل دي ممارسات معروف إنها بتقلل فرصة حدوث الـ </span><code>defects</code><span> بشكل كبير.</span></p></li><li><p><strong><span>إعادة الاستخدام (</span><code>Reuse</code><span>)</span></strong>
+<span>تقدر &quot;تغلّف&quot; الـ </span><code>infrastructure</code><span> بتاعتك في </span><code>modules</code><span> قابلة لإعادة الاستخدام (</span><code>reusable</code><span>) عشان بدل ما تعمل كل </span><code>deployment</code><span> لكل منتج في كل </span><code>environment</code><span> من الصفر، تقدر تبني فوق أجزاء (</span><code>pieces</code><span>) معروفة، ومتوثقة (</span><code>documented</code><span>)، ومتجربة في المعركة (</span><code>battle-tested</code><span>).</span></p></li><li><p><strong><span>السعادة (</span><code>Happiness</code><span>)</span></strong>
+<span>فيه سبب تاني مهم جدًا، وكتير بيتم تجاهله، لـ ليه المفروض تستخدم </span><code>IaC</code><span>: السعادة. إنك تعمل </span><code>deploy</code><span> للكود وتدير الـ </span><code>infrastructure</code><span> يدويًا ده شيء متكرر وممل. الـ </span><code>Developers</code><span> والـ </span><code>sysadmins</code><span> بيكرهوا النوع ده من الشغل، لأنه مفيش فيه إبداع، ولا تحدي، ولا تقدير. ممكن تعمل </span><code>deploy</code><span> للكود بشكل مثالي لشهور، ومحدش ياخد باله—لحد ما يجي اليوم اللي تبوظ فيه الدنيا. وده بيخلق بيئة مرهقة ومش لطيفة. الـ </span><code>IaC</code><span> بتقدم بديل أفضل بيسمح للكمبيوترات تعمل اللي هي شاطرة فيه (</span><code>automation</code><span>) والـ </span><code>developers</code><span> يعملوا اللي هما شاطرين فيه (</span><code>coding</code><span>).</span></p></li></ul><p><span>دلوقتي بعد ما بقى عندك فكرة عن ليه الـ </span><code>IaC</code><span> مهم، السؤال اللي بعده هو هل </span><code>Terraform</code><span> هو أفضل أداة </span><code>IaC</code><span> ليك. عشان أجاوب على ده، الأول هديك شرح تمهيدي سريع جدًا عن إزاي </span><code>Terraform</code><span> بيشتغل، وبعدها هقارنه بخيارات الـ </span><code>IaC</code><span> المشهورة التانية الموجودة، زي </span><code>Chef</code><span>، و</span><code>Puppet</code><span>، و</span><code>Ansible</code><span>.</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>]]</span></p><h3 id='إزاي-terraform-بيشتغل'><strong><span>إزاي </span><code>Terraform</code><span> بيشتغل؟</span></strong></h3><p><span>دي نظرة عامة ومبسطة شوية لـ إزاي </span><code>Terraform</code><span> بيشتغل. </span><code>Terraform</code><span> هي أداة </span><code>open source</code><span> عملتها شركة HashiCorp ومكتوبة بلغة برمجة </span><code>Go</code><span>. الـ </span><code>code</code><span> بتاع </span><code>Go</code><span> بيتعمله </span><code>compile</code><span> ويتحول لـ </span><code>binary</code><span> واحد (أو بمعنى أصح، </span><code>binary</code><span> لكل نظام تشغيل مدعوم)، واسمه، ومش مفاجأة، </span><code>terraform</code><span>.</span></p><p><span>تقدر تستخدم الـ </span><code>binary</code><span> ده عشان تعمل </span><code>deploy</code><span> للـ </span><code>infrastructure</code><span> من اللابتوب بتاعك أو من </span><code>build server</code><span> أو من أي كمبيوتر تاني تقريبًا، ومش محتاج تشغل أي </span><code>infrastructure</code><span> زيادة عشان ده يحصل. وده لأن من ورا الكواليس، الـ </span><code>binary</code><span> بتاع </span><code>terraform</code><span> بيعمل </span><code>API calls</code><span> بالنيابة عنك لواحد أو أكتر من الـ </span><code>providers</code><span>، زي </span><code>AWS</code><span>، و</span><code>Azure</code><span>، و</span><code>Google Cloud</code><span>، و</span><code>DigitalOcean</code><span>، و</span><code>OpenStack</code><span>، وغيرهم. ده معناه إن </span><code>Terraform</code><span> بيقدر يستفيد من الـ </span><code>infrastructure</code><span> اللي الـ </span><code>providers</code><span> دول مشغلينها أصلًا للـ </span><code>API servers</code><span> بتاعتهم، وكمان آليات الـ </span><code>authentication</code><span> اللي أنت بتستخدمها معاهم أصلًا (زي الـ </span><code>API keys</code><span> اللي عندك أصلًا لـ </span><code>AWS</code><span>).</span></p><p><span>طب إزاي </span><code>Terraform</code><span> بيعرف إيه الـ </span><code>API calls</code><span> اللي المفروض يعملها؟ الإجابة هي إنك بتعمل</span>
+<span> </span><code>Terraform configurations</code><span>، ودي عبارة عن ملفات نصية بتحدد فيها إيه الـ </span><code>infrastructure</code><span> اللي عايز تعملها. الـ </span><code>Configurations</code><span> دي هي الـ </span><code>code</code><span> في جملة </span><code>infrastructure as code</code><span>. ده مثال لـ </span><code>Terraform configuration</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="hcl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="hcl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0236px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">resource "aws_instance" "example" {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ami &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = "ami-0fb653ca2d3203ac1"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  instance_type = "t2.micro"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">resource "google_dns_record_set" "a" {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  name &nbsp; &nbsp; &nbsp; &nbsp; = "demo.google-example.com"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  managed_zone = "example-zone"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  type &nbsp; &nbsp; &nbsp; &nbsp; = "A"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ttl &nbsp; &nbsp; &nbsp; &nbsp;  = 300</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  rrdatas &nbsp; &nbsp;  = [aws_instance.example.public_ip]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 269px;"></div><div class="CodeMirror-gutters" style="display: none; height: 269px;"></div></div></div></pre><p><span>حتى لو عمرك ما شفت كود </span><code>Terraform</code><span> قبل كده، مش هتلاقي صعوبة كبيرة في قرايته. الجزء ده من الكود بيدي تعليمات لـ </span><code>Terraform</code><span> إنه يعمل </span><code>API calls</code><span> لـ </span><code>AWS</code><span> عشان يعمل </span><code>deploy</code><span> لـ </span><code>server</code><span>، وبعدين يعمل </span><code>API calls</code><span> لـ </span><code>Google Cloud</code><span> عشان يعمل </span><code>entry</code><span> في الـ </span><code>Domain Name System (DNS)</code><span> بيشاور على الـ </span><code>IP address</code><span> بتاع الـ </span><code>server</code><span> بتاع </span><code>AWS</code><span>. بمجرد </span><code>syntax</code><span> واحد بسيط (واللي هتتعلمه في الفصل التاني)، </span><code>Terraform</code><span> بيسمح لك تعمل </span><code>deploy</code><span> لـ </span><code>resources</code><span> مترابطة على أكتر من </span><code>cloud provider</code><span>.</span></p><p><span>تقدر تعرّف الـ </span><code>infrastructure</code><span> بتاعتك كلها—</span><code>servers</code><span>، </span><code>databases</code><span>، </span><code>load balancers</code><span>، </span><code>network topology</code><span>، وهكذا—في ملفات </span><code>Terraform configuration</code><span> وتعمل </span><code>commit</code><span> للملفات دي </span>
+<span>لـ </span><code>version control</code><span>. بعد كده بتشغل أوامر </span><code>Terraform</code><span> معينة، زي </span><code>terraform apply</code><span>، عشان تعمل </span><code>deploy</code><span> للـ </span><code>infrastructure</code><span> دي. الـ </span><code>binary</code><span> بتاع </span><code>terraform</code><span> بيعمل </span><code>parse</code><span> للكود بتاعك، ويترجمه لسلسلة من الـ </span><code>API calls</code><span> للـ </span><code>cloud providers</code><span> اللي متحددين في الكود، وبينفذ الـ </span><code>API calls</code><span> دي بأكبر كفاءة ممكنة بالنيابة عنك، زي ما هو واضح في شكل 1-6.</span></p><p><img src="imgs/image-20250615073250763.png" referrerpolicy="no-referrer" alt="image-20250615073250763"></p><h2 id='إزاي-نقارن-terraform-بأدوات-iac-التانية'><strong><span>إزاي نقارن </span><code>Terraform</code><span> بأدوات </span><code>IaC</code><span> التانية؟</span></strong></h2><p><span>الـ </span><code>Infrastructure as code</code><span> حاجة رائعة، بس عملية اختيار أداة </span><code>IaC</code><span> مش كده خالص. كتير من أدوات الـ </span><code>IaC</code><span> شغلها متداخل مع بعض. كتير منها </span><code>open source</code><span>. وكتير منها بيقدم دعم تجاري (</span><code>commercial support</code><span>). إلا لو كنت استخدمت كل واحدة بنفسك، مش بيبقى واضح إيه المعايير اللي المفروض تستخدمها عشان تختار دي أو دي.</span></p><p><span>اللي بيصعب الموضوع أكتر هو إن معظم المقارنات اللي هتلاقيها بين الأدوات دي مش بتعمل أكتر من إنها بترص الخصائص العامة لكل واحدة، وبتخلي الموضوع يبان كأنك ممكن تنجح بنفس الدرجة مع أي واحدة فيهم. ورغم إن ده صحيح من الناحية التقنية، بس هو مش مفيد. ده عامل زي ما تكون بتقول لمبرمج مبتدئ إنه ممكن ينجح بنفس الدرجة لو بنى موقع بـ </span><code>PHP</code><span> أو </span><code>C</code><span> أو </span><code>assembly</code><span>—جملة صحيحة من الناحية التقنية، بس بتغفل كمية معلومات ضخمة ضرورية عشان تاخد قرار سليم.</span></p><p><span>في الأجزاء الجاية، هعمل مقارنة تفصيلية بين أشهر أدوات الـ </span><code>configuration management</code><span> والـ </span><code>provisioning</code><span>: </span><code>Terraform</code><span>، </span><code>Chef</code><span>، </span><code>Puppet</code><span>، </span><code>Ansible</code><span>، </span><code>Pulumi</code><span>، </span><code>CloudFormation</code><span>، و </span><code>OpenStack Heat</code><span>. هدفي هو إني أساعدك تقرر إذا كان </span><code>Terraform</code><span> اختيار كويس عن طريق إني أشرح ليه شركتي، </span><code>Gruntwork</code><span>، اختارت </span><code>Terraform</code><span> كأداة </span><code>IaC</code><span> المفضلة عندنا، وبشكل ما، ليه كتبت الكتاب ده. زي كل القرارات التقنية، الموضوع عبارة عن </span><code>trade-offs</code><span> (مفاضلات) وأولويات، وحتى لو أولوياتك الشخصية مختلفة عن أولوياتي، أتمنى إن مشاركة طريقة التفكير دي تساعدك تاخد قرارك بنفسك.</span></p><p><span>دي الـ </span><code>trade-offs</code><span> الأساسية اللي لازم تاخدها في اعتبارك:</span></p><ul><li><p><code>Configuration management</code><span> مقابل </span><code>provisioning</code></p></li><li><p><code>Mutable infrastructure</code><span> مقابل </span><code>immutable infrastructure</code></p></li><li><p><code>Procedural language</code><span> مقابل </span><code>declarative language</code></p></li><li><p><code>General-purpose language</code><span> مقابل </span><code>domain-specific language</code></p></li><li><p><code>Master</code><span> مقابل </span><code>masterless</code></p></li><li><p><code>Agent</code><span> مقابل </span><code>agentless</code></p></li><li><p><span>العرض المدفوع مقابل المجاني (</span><code>Paid versus free offering</code><span>)</span></p></li><li><p><span>مجتمع كبير مقابل مجتمع صغير (</span><code>Large community versus small community</code><span>)</span></p></li><li><p><span>ناضجة (</span><code>Mature</code><span>) مقابل حديثة جدًا (</span><code>cutting-edge</code><span>)</span></p></li><li><p><span>استخدام أكتر من أداة مع بعض</span></p></li></ul><h4 id='configuration-management-مقابل-provisioning'><strong><code>Configuration Management</code><span> مقابل </span><code>Provisioning</code></strong></h4><p><span>زي ما شفت قبل كده، </span><code>Chef</code><span> و</span><code>Puppet</code><span> و</span><code>Ansible</code><span> كلهم أدوات </span><code>configuration management</code><span>، في حين إن </span><code>CloudFormation</code><span> و</span><code>Terraform</code><span> و</span><code>OpenStack Heat</code><span> و</span><code>Pulumi</code><span> كلهم أدوات </span><code>provisioning</code><span>.</span></p><p><span>ورغم إن الفرق مش واضح تمامًا، بما إن أدوات الـ </span><code>configuration management</code><span> بتقدر عادةً تعمل درجة معينة من الـ </span><code>provisioning</code><span> (مثلًا، تقدر تعمل </span><code>deploy</code><span> لـ </span><code>server</code><span> بـ </span><code>Ansible</code><span>) وإن أدوات الـ </span><code>provisioning</code><span> بتقدر عادةً تعمل درجة معينة من الـ </span><code>configuration</code><span> (مثلًا، تقدر تشغل </span><code>configuration scripts</code><span> على كل </span><code>server</code><span> بتعمله </span><code>provision</code><span> بـ </span><code>Terraform</code><span>)، أنت عادةً بتبقى عايز تختار الأداة الأنسب للـ </span><code>use case</code><span> بتاعتك.</span></p><p><span>بالذات، لو بتستخدم أدوات </span><code>server templating</code><span>، فالجزء الأكبر من احتياجاتك في الـ </span><code>configuration management</code><span> بيبقى اتعمل خلاص. بمجرد ما يبقى عندك </span><code>image</code><span> معمول لها </span><code>build</code><span> من </span><code>Dockerfile</code><span> أو </span><code>Packer template</code><span>، كل اللي بيفضل هو إنك تعمل </span><code>provision</code><span> للـ </span><code>infrastructure</code><span> عشان تشغل الـ </span><code>images</code><span> دي. ولما الموضوع بييجي للـ </span><code>provisioning</code><span>، أداة </span><code>provisioning</code><span> هي اللي هتكون اختيارك الأفضل. في الفصل السابع، هتشوف مثال على إزاي تستخدم </span><code>Terraform</code><span> و</span><code>Docker</code><span> مع بعض، ودي تركيبة (</span><code>combination</code><span>) مشهورة جدًا الأيام دي.</span></p><p><span>ومع ذلك، لو مش بتستخدم أدوات </span><code>server templating</code><span>، فالبديل الكويس هو إنك تستخدم أداة </span><code>configuration management</code><span> وأداة </span><code>provisioning</code><span> مع بعض. على سبيل المثال، تركيبة مشهورة هي إنك تستخدم </span><code>Terraform</code><span> عشان تعمل </span><code>provision</code><span> للـ </span><code>servers</code><span> بتاعتك و </span><code>Ansible</code><span> عشان تعمل </span><code>configure</code><span> لكل واحد فيهم.</span></p><p>&nbsp;</p><h4 id='mutable-infrastructure-مقابل-immutable-infrastructure'><strong><code>Mutable Infrastructure</code><span> مقابل </span><code>Immutable Infrastructure</code></strong></h4><p><span>أدوات الـ </span><code>Configuration management</code><span> زي </span><code>Chef</code><span> و</span><code>Puppet</code><span> و</span><code>Ansible</code><span> عادةً بتميل لمبدأ</span>
+<span> الـ </span><code>mutable infrastructure</code><span>.</span></p><p><span>على سبيل المثال، لو خليت </span><code>Chef</code><span> يعمل </span><code>install</code><span> لـ </span><code>version</code><span> جديدة من </span><code>OpenSSL</code><span>، هو هينفذ الـ </span><code>software update</code><span> على الـ </span><code>servers</code><span> اللي عندك حاليًا، والتغييرات هتحصل </span><code>in place</code><span> (في نفس المكان). مع الوقت، وكل ما بتطبق </span><code>updates</code><span> أكتر وأكتر، كل </span><code>server</code><span> بيبني تاريخ فريد من التغييرات. نتيجة لده، كل </span><code>server</code><span> بيبقى مختلف شوية عن الباقيين، وده بيؤدي لـ </span><code>configuration bugs</code><span> صغيرة بتبقى صعبة في تشخيصها وإعادة إنتاجها (دي نفس مشكلة الـ </span><code>configuration drift</code><span> اللي بتحصل لما بتدير الـ </span><code>servers</code><span> يدويًا، مع إنها بتبقى مشكلة أقل بكتير لما بتستخدم أداة </span><code>configuration management</code><span>). حتى مع وجود </span><code>automated tests</code><span>، الـ </span><code>bugs</code><span> دي صعب تكتشفها؛ تغيير في الـ </span><code>configuration management</code><span> ممكن يشتغل تمام في </span><code>test server</code><span>، بس نفس التغيير ده ممكن يتصرف بشكل مختلف في </span><code>production server</code><span> لأن الـ </span><code>production server</code><span> تراكمت عليه تغييرات شهور مش موجودة في الـ </span><code>test environment</code><span>.</span></p><p><span>لو بتستخدم </span><code>provisioning tool</code><span> زي </span><code>Terraform</code><span> عشان تعمل </span><code>deploy</code><span> لـ </span><code>machine images</code><span> معمول لها </span><code>build</code><span> بـ </span><code>Docker</code><span> أو </span><code>Packer</code><span>، معظم &quot;التغييرات&quot; بتبقى في الحقيقة </span><code>deployments</code><span> لـ </span><code>server</code><span> جديد تمامًا. على سبيل المثال، عشان تعمل </span><code>deploy</code><span> لـ </span><code>version</code><span> جديدة من </span><code>OpenSSL</code><span>، هتستخدم </span><code>Packer</code><span> عشان تعمل </span><code>image</code><span> جديدة بالـ </span><code>version</code><span> الجديدة من </span><code>OpenSSL</code><span>، وتعمل </span><code>deploy</code><span> للـ </span><code>image</code><span> دي على مجموعة </span><code>servers</code><span> جديدة، وبعدين تمسح الـ </span><code>servers</code><span> القديمة. عشان كل </span><code>deployment</code><span> بيستخدم </span><code>immutable images</code><span> على </span><code>servers</code><span> جديدة لسة، الطريقة دي بتقلل احتمالية حدوث </span><code>bugs</code><span> الـ </span><code>configuration drift</code><span>، وبتخلي أسهل إنك تعرف بالظبط إيه الـ </span><code>software</code><span> اللي شغال على كل </span><code>server</code><span>، وبتسمح لك تعمل </span><code>deploy</code><span> بسهولة لأي </span><code>version</code><span> قديمة من الـ </span><code>software</code><span> (أي </span><code>image</code><span> قديمة) في أي وقت. ده كمان بيخلي الـ </span><code>automated testing</code><span> بتاعك فعال أكتر، لأن </span><code>immutable image</code><span> اللي بتنجح في اختباراتك في الـ </span><code>test environment</code><span> غالبًا هتتصرف بنفس الطريقة بالظبط في الـ </span><code>production environment</code><span>.</span></p><p><span>طبعًا، ممكن تجبر أدوات الـ </span><code>configuration management</code><span> إنها تعمل </span><code>immutable deployments</code><span> هي كمان، بس دي مش الطريقة الطبيعية (</span><code>idiomatic</code><span>) للأدوات دي، في حين إنها طريقة طبيعية لاستخدام أدوات الـ </span><code>provisioning</code><span>. ويستاهل نذكر كمان إن طريقة الـ </span><code>immutable</code><span> ليها عيوبها. على سبيل المثال، إعادة بناء </span><code>image</code><span> من </span><code>server template</code><span> وإعادة </span><code>deploy</code><span> كل الـ </span><code>servers</code><span> بتاعتك عشان تغيير تافه ممكن ياخد وقت طويل. وكمان، الـ </span><code>immutability</code><span> بتستمر بس لحد ما تشغل الـ </span><code>image</code><span> فعلًا. بعد ما الـ </span><code>server</code><span> يقوم ويشتغل، هيبدأ يعمل تغييرات على الـ </span><code>hard drive</code><span> ويحصل له درجة معينة من الـ </span><code>configuration drift</code><span> (مع إن ده بيقل لو بتعمل </span><code>deploy</code><span> بشكل متكرر).</span></p><h4 id='procedural-language-مقابل-declarative-language'><strong><code>Procedural Language</code><span> مقابل </span><code>Declarative Language</code></strong></h4><p><code>Chef</code><span> و </span><code>Ansible</code><span> بيشجعوا على أسلوب </span><code>procedural</code><span> بتكتب فيه </span><code>code</code><span> بيحدد، خطوة بخطوة، إزاي توصل لحالة نهائية معينة.</span></p><p><code>Terraform</code><span>، </span><code>CloudFormation</code><span>، </span><code>Puppet</code><span>، </span><code>OpenStack Heat</code><span>، و </span><code>Pulumi</code><span> كلهم بيشجعوا على أسلوب </span><code>declarative</code><span> أكتر بتكتب فيه </span><code>code</code><span> بيحدد الحالة النهائية اللي أنت عايزها، وأداة الـ </span><code>IaC</code><span> نفسها هي المسؤولة عن إنها تكتشف إزاي توصل للحالة دي.</span></p><p><span>عشان نوضح الفرق، خلينا نشوف مثال. تخيل إنك عايز تعمل </span><code>deploy</code><span> لـ 10 </span><code>servers</code><span> (</span><code>EC2 Instances</code><span> بلغة </span><code>AWS</code><span>) عشان تشغل </span><code>AMI</code><span> بالـ </span><code>ID</code><span> ده </span><code>ami-0fb653ca2d3203ac1</code><span> (Ubuntu 20.04). ده مثال مبسط لـ </span><code>Ansible template</code><span> بيعمل ده باستخدام أسلوب </span><code>procedural</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="yaml"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="yaml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0236px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">- </span><span class="cm-atom">ec2</span><span class="cm-meta">:</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  count</span><span class="cm-meta">: </span><span class="cm-number">10</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  image</span><span class="cm-meta">: </span>ami-0fb653ca2d3203ac1</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  instance_type</span><span class="cm-meta">: </span>t2.micro</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 90px;"></div><div class="CodeMirror-gutters" style="display: none; height: 90px;"></div></div></div></pre><p><span>وده مثال مبسط لـ </span><code>Terraform configuration</code><span> بيعمل نفس الحاجة باستخدام أسلوب </span><code>declarative</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="hcl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="hcl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0234px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">resource "aws_instance" "example" {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  count &nbsp; &nbsp; &nbsp; &nbsp; = 10</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ami &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = "ami-0fb653ca2d3203ac1"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  instance_type = "t2.micro"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 112px;"></div><div class="CodeMirror-gutters" style="display: none; height: 112px;"></div></div></div></pre><p><span>في الظاهر، الطريقتين دول ممكن يبانوا شبه بعض، ولما تنفذهم في الأول بـ </span><code>Ansible</code><span> أو </span><code>Terraform</code><span>، هينتجوا نتائج متشابهة. اللي يهم هو اللي بيحصل لما تحب تعمل تغيير.</span></p><p><span>على سبيل المثال، تخيل الـ </span><code>traffic</code><span> زاد، وعايز تزود عدد الـ </span><code>servers</code><span> لـ 15. مع </span><code>Ansible</code><span>، الكود الـ </span><code>procedural</code><span> اللي كتبته قبل كده مبقاش مفيد؛ لو بس عدلت عدد الـ </span><code>servers</code><span> لـ 15 وشغلت الكود ده تاني، هيعمل </span><code>deploy</code><span> لـ 15 </span><code>server</code><span> جداد، ويبقى عندك 25 في المجموع! عشان كده، أنت محتاج تبقى عارف إيه اللي معمول له </span><code>deploy</code><span> أصلًا، وتكتب </span><code>script</code><span> </span><code>procedural</code><span> جديد تمامًا عشان يضيف الخمسة </span><code>servers</code><span> الجداد:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="yaml"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="yaml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0236px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">- </span><span class="cm-atom">ec2</span><span class="cm-meta">:</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  count</span><span class="cm-meta">: </span><span class="cm-number">5</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  image</span><span class="cm-meta">: </span>ami-0fb653ca2d3203ac1</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  instance_type</span><span class="cm-meta">: </span>t2.micro</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 90px;"></div><div class="CodeMirror-gutters" style="display: none; height: 90px;"></div></div></div></pre><p><span>مع الكود الـ </span><code>declarative</code><span>، لأن كل اللي بتعمله هو إنك بتوصف الحالة النهائية اللي أنت عايزها و</span><code>Terraform</code><span> هو اللي بيعرف إزاي يوصل للحالة دي، </span><code>Terraform</code><span> كمان بيبقى عارف أي </span><code>state</code><span> هو عملها قبل كده. عشان كده، عشان تعمل </span><code>deploy</code><span> لخمسة </span><code>servers</code><span> زيادة، كل اللي محتاج تعمله هو إنك ترجع لنفس الـ </span><code>Terraform configuration</code><span> وتعدل الـ </span><code>count</code><span> من 10 لـ 15:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="hcl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="hcl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0234px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">resource "aws_instance" "example" {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  count &nbsp; &nbsp; &nbsp; &nbsp; = 15</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ami &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = "ami-0fb653ca2d3203ac1"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  instance_type = "t2.micro"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 112px;"></div><div class="CodeMirror-gutters" style="display: none; height: 112px;"></div></div></div></pre><p><span>لو طبقت الـ </span><code>configuration</code><span> دي، </span><code>Terraform</code><span> هيدرك إنه عمل أصلًا </span><code>deploy</code><span> لـ 10 </span><code>servers</code><span> وبالتالي كل اللي محتاج يعمله هو إنه ينشئ 5 </span><code>servers</code><span> جداد. في الحقيقة، قبل ما تطبق الـ </span><code>configuration</code><span> دي، تقدر تستخدم أمر </span><code>plan</code><span> بتاع </span><code>Terraform</code><span> عشان تشوف معاينة (</span><code>preview</code><span>) للتغييرات اللي هيعملها:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="bash" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="bash"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0236px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">$ terraform</span> plan</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># aws_instance.example[11] will be created</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> resource <span class="cm-string">"aws_instance"</span> <span class="cm-string">"example"</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> ami</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-operator">=</span> <span class="cm-string">"ami-0fb653ca2d3203ac1"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> instance_type <span class="cm-operator">=</span> <span class="cm-string">"t2.micro"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> (...)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># aws_instance.example[12] will be created</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> resource <span class="cm-string">"aws_instance"</span> <span class="cm-string">"example"</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> ami</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-operator">=</span> <span class="cm-string">"ami-0fb653ca2d3203ac1"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> instance_type <span class="cm-operator">=</span> <span class="cm-string">"t2.micro"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> (...)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># aws_instance.example[13] will be created</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> resource <span class="cm-string">"aws_instance"</span> <span class="cm-string">"example"</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> ami</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-operator">=</span> <span class="cm-string">"ami-0fb653ca2d3203ac1"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> instance_type <span class="cm-operator">=</span> <span class="cm-string">"t2.micro"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> (...)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># aws_instance.example[14] will be created</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> resource <span class="cm-string">"aws_instance"</span> <span class="cm-string">"example"</span> {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> ami</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-operator">=</span> <span class="cm-string">"ami-0fb653ca2d3203ac1"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> instance_type <span class="cm-operator">=</span> <span class="cm-string">"t2.micro"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">+</span> (...)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Plan: <span class="cm-number">5</span> to add, <span class="cm-number">0</span> to change, <span class="cm-number">0</span> to destroy.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 672px;"></div><div class="CodeMirror-gutters" style="display: none; height: 672px;"></div></div></div></pre><p><span>طيب إيه اللي بيحصل لما تبقى عايز تعمل </span><code>deploy</code><span> لـ </span><code>version</code><span> مختلفة من الـ </span><code>app</code><span>، زي </span><code>AMI ID</code><span> </span><code>ami-02bcbb802e03574ba</code><span>؟ مع الأسلوب الـ </span><code>procedural</code><span>، الاتنين </span><code>Ansible templates</code><span> اللي فاتوا مبقوش مفيدين تاني، فبتحتاج تكتب </span><code>template</code><span> تالت عشان تدور على الـ 10 </span><code>servers</code><span> اللي عملتلهم </span><code>deploy</code><span> قبل كده (ولا بقوا 15 دلوقتي؟) وتحدّث كل واحد بحرص للـ </span><code>version</code><span> الجديدة. مع أسلوب الـ </span><code>declarative</code><span> بتاع </span><code>Terraform</code><span>، بترجع لنفس ملف الـ </span><code>configuration</code><span> بالظبط تاني وببساطة بتغير الـ </span><code>parameter</code><span> بتاع الـ </span><code>ami</code><span> لـ </span><code>ami-02bcbb802e03574ba</code><span>:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="hcl"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="hcl"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 17.0234px; left: 7.6302px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">resource "aws_instance" "example" {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  count &nbsp; &nbsp; &nbsp; &nbsp; = 15</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  ami &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = "ami-02bcbb802e03574ba"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">  instance_type = "t2.micro"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 112px;"></div><div class="CodeMirror-gutters" style="display: none; height: 112px;"></div></div></div></pre><p><span>طبعًا، الأمثلة دي مبسطة. </span><code>Ansible</code><span> بيسمح لك تستخدم </span><code>tags</code><span> عشان تبحث عن </span><code>EC2 Instances</code><span> موجودة قبل ما تعمل </span><code>deploy</code><span> لجديد (مثلًا باستخدام الـ </span><code>parameters</code><span> اللي اسمها </span><code>instance_tags</code><span> و </span><code>count_tag</code><span>)، بس إنك تضطر تعرف الـ </span><code>logic</code><span> ده يدويًا لكل </span><code>resource</code><span> بتديره بـ </span><code>Ansible</code><span>، بناءً على التاريخ اللي فات لكل </span><code>resource</code><span>، ممكن يكون معقد بشكل مفاجئ: على سبيل المثال، ممكن تضطر تعمل </span><code>configure</code><span> للكود بتاعك يدويًا عشان يدور على الـ </span><code>Instances</code><span> الموجودة مش بس بالـ </span><code>tag</code><span> لكن كمان بالـ </span><code>image version</code><span>، والـ </span><code>Availability Zone</code><span>، و</span><code>parameters</code><span> تانية. ده بيوضح مشكلتين كبار في أدوات الـ </span><code>IaC</code><span> الـ </span><code>procedural</code><span>:</span></p><ul><li><p><strong><span>الكود الـ </span><code>Procedural</code><span> مش بيعبر بشكل كامل عن حالة الـ </span><code>infrastructure</code></strong>
+<span>قراية التلاتة </span><code>Ansible templates</code><span> اللي فاتوا مش كافية عشان تعرف إيه اللي معمول له </span><code>deploy</code><span>. هتحتاج كمان تعرف الترتيب اللي الـ </span><code>templates</code><span> دي اتطبقت بيه. لو كنت طبقتهم بترتيب مختلف، كان ممكن ينتهي بيك الحال بـ </span><code>infrastructure</code><span> مختلفة، ودي حاجة متقدرش تشوفها في الـ </span><code>codebase</code><span> نفسه. بمعنى آخر، عشان تفهم </span><code>codebase</code><span> بتاع </span><code>Ansible</code><span> أو </span><code>Chef</code><span>، أنت محتاج تعرف التاريخ الكامل لكل تغيير حصل.</span></p></li><li><p><strong><span>الكود الـ </span><code>Procedural</code><span> بيحد من إعادة الاستخدام</span></strong>
+<span>إعادة استخدام الكود الـ </span><code>procedural</code><span> محدودة بطبيعتها لأنك لازم تاخد في اعتبارك يدويًا الحالة الحالية للـ </span><code>infrastructure</code><span>. ولأن الحالة دي بتتغير باستمرار، كود استخدمته من أسبوع ممكن ميبقاش صالح للاستخدام لأنه كان مصمم عشان يعدل حالة للـ </span><code>infrastructure</code><span> بتاعتك مبقتش موجودة. نتيجة لده، الـ </span><code>codebases</code><span> الـ </span><code>procedural</code><span> بتميل إنها تكبر وتبقى معقدة مع الوقت.</span></p></li></ul><p><span>مع أسلوب </span><code>Terraform</code><span> الـ </span><code>declarative</code><span>، الكود دايمًا بيمثل أحدث حالة للـ </span><code>infrastructure</code><span> بتاعتك. بلمحة واحدة، تقدر تحدد إيه اللي معمول له </span><code>deploy</code><span> حاليًا وإزاي معمول له </span><code>configure</code><span>، من غير ما تقلق بخصوص التاريخ أو التوقيت. ده كمان بيخلي من السهل إنك تعمل كود قابل لإعادة الاستخدام، لأنك مش محتاج تاخد في اعتبارك يدويًا الحالة الحالية للعالم. بدلًا من كده، أنت بس بتركز على وصف الحالة اللي أنت عايزها، و</span><code>Terraform</code><span> هو اللي بيعرف إزاي ينتقل من حالة للتانية أوتوماتيكيًا. نتيجة لده، الـ </span><code>codebases</code><span> بتاعة </span><code>Terraform</code><span> بتميل إنها تفضل صغيرة وسهلة الفهم.</span></p><p>&nbsp;</p><p>&nbsp;</p><h4 id='general-purpose-language-مقابل-domain-specific-language'><strong><code>General-Purpose Language</code><span> مقابل </span><code>Domain-Specific Language</code></strong></h4><p><code>Chef</code><span> و </span><code>Pulumi</code><span> بيسمحولك تستخدم لغة برمجة عامة (</span><code>general-purpose programming language - GPL</code><span>) عشان تدير الـ </span><code>infrastructure as code</code><span>: </span><code>Chef</code><span> بيدعم </span><code>Ruby</code><span>؛ </span><code>Pulumi</code><span> بيدعم مجموعة واسعة من الـ </span><code>GPLs</code><span>، منها </span><code>JavaScript</code><span>، </span><code>TypeScript</code><span>، </span><code>Python</code><span>، </span><code>Go</code><span>، </span><code>C#</code><span>، </span><code>Java</code><span>، وغيرهم.</span>
+<span> </span><code>Terraform</code><span>، و</span><code>Puppet</code><span>، و</span><code>Ansible</code><span>، و</span><code>CloudFormation</code><span>، و</span><code>OpenStack Heat</code><span> كل واحد منهم بيستخدم لغة مخصصة لمجال معين (</span><code>domain-specific language - DSL</code><span>) عشان يدير الـ </span><code>infrastructure as code</code><span>: </span><code>Terraform</code><span> بيستخدم </span><code>HCL</code><span>؛ </span><code>Puppet</code><span> بيستخدم </span><code>Puppet Language</code><span>؛ </span><code>Ansible</code><span> و</span><code>CloudFormation</code><span> و</span><code>OpenStack Heat</code><span> بيستخدموا </span><code>YAML</code><span> (</span><code>CloudFormation</code><span> كمان بيدعم </span><code>JSON</code><span>).</span></p><p><span>الفرق بين الـ </span><code>GPLs</code><span> والـ </span><code>DSLs</code><span> مش واضح تمامًا—هو أقرب لنموذج فكري مساعد أكتر من كونه تصنيف منفصل ونظيف—بس الفكرة الأساسية هي إن الـ </span><code>DSLs</code><span> مصممة للاستخدام في مجال واحد محدد، في حين إن الـ </span><code>GPLs</code><span> ممكن تستخدم في مجموعة واسعة من المجالات. على سبيل المثال، كود الـ </span><code>HCL</code><span> اللي بتكتبه لـ </span><code>Terraform</code><span> بيشتغل بس مع </span><code>Terraform</code><span> ومحصور بس في الوظائف اللي </span><code>Terraform</code><span> بيدعمها، زي عمل </span><code>deploy</code><span> للـ </span><code>infrastructure</code><span>. ده على عكس استخدام </span><code>GPL</code><span> زي </span><code>JavaScript</code><span> مع </span><code>Pulumi</code><span>، اللي الكود اللي بتكتبه مش بس يقدر يدير الـ </span><code>infrastructure</code><span> باستخدام مكتبات </span><code>Pulumi</code><span>، لكن كمان يقدر يعمل تقريبًا أي مهمة برمجية تانية أنت عايزها، زي إنه يشغّل </span><code>web app</code><span> (في الحقيقة، </span><code>Pulumi</code><span> بيقدم </span><code>Automation API</code><span> تقدر تستخدمه عشان تدمج </span><code>Pulumi</code><span> جوه الـ </span><code>application code</code><span> بتاعك)، وينفذ </span><code>control logic</code><span> معقد (</span><code>loops</code><span>, </span><code>conditionals</code><span>, والـ </span><code>abstraction</code><span> كلهم أسهل في الـ </span><code>GPL</code><span> عن الـ </span><code>DSL</code><span>)، ويشغل عمليات تحقق (</span><code>validations</code><span>) واختبارات (</span><code>tests</code><span>) مختلفة، ويتكامل مع أدوات و</span><code>APIs</code><span> تانية، وهكذا.</span></p><p><span>الـ </span><code>DSLs</code><span> ليها كذا ميزة على الـ </span><code>GPLs</code><span>:</span></p><ul><li><p><strong><span>أسهل في التعلم</span></strong>
+<span>بما إن الـ </span><code>DSLs</code><span>، بحكم تصميمها، بتتعامل مع مجال واحد بس، فهي بتميل إنها تكون لغات أصغر وأبسط من الـ </span><code>GPLs</code><span> وبالتالي أسهل في التعلم منها. معظم الـ </span><code>developers</code><span> هيقدروا يتعلموا </span><code>Terraform</code><span> أسرع من، مثلًا، </span><code>Java</code><span>.</span></p></li><li><p><strong><span>أوضح ومختصرة أكتر</span></strong>
+<span>بما إن الـ </span><code>DSLs</code><span> مصممة لغرض واحد محدد، وكل الكلمات المفتاحية (</span><code>keywords</code><span>) في اللغة معمولة عشان تعمل الحاجة دي، الكود المكتوب بالـ </span><code>DSLs</code><span> بيميل إنه يكون أسهل في الفهم ومختصر أكتر من الكود المكتوب عشان يعمل نفس الحاجة بالظبط بس مكتوب بـ </span><code>GPL</code><span>. الكود اللي بيعمل </span><code>deploy</code><span> لـ </span><code>server</code><span> واحد في </span><code>AWS</code><span> عادةً بيكون أقصر وأسهل في الفهم في </span><code>Terraform</code><span> عنه في </span><code>Java</code><span>.</span></p></li><li><p><strong><span>موحدة أكتر</span></strong>
+<span>معظم الـ </span><code>DSLs</code><span> محدودة في اللي بتسمحلك تعمله. ده ليه شوية عيوب، زي ما هذكر كمان شوية، بس واحدة من المزايا هي إن الكود المكتوب بالـ </span><code>DSLs</code><span> عادةً بيستخدم </span><code>structure</code><span> موحد ومتوقع، فبيبقى أسهل في التصفح والفهم من الكود المكتوب بالـ </span><code>GPLs</code><span>، اللي كل </span><code>developer</code><span> ممكن يحل نفس المشكلة بطريقة مختلفة تمامًا. فيه طريقة واحدة بس فعلًا لعمل </span><code>deploy</code><span> لـ </span><code>server</code><span> في </span><code>AWS</code><span> باستخدام </span><code>Terraform</code><span>؛ فيه ميات الطرق لعمل نفس الحاجة بـ </span><code>Java</code><span>.</span></p></li></ul><p><span>الـ </span><code>GPLs</code><span> كمان ليها كذا ميزة على الـ </span><code>DSLs</code><span>:</span></p><ul><li><p><strong><span>ممكن متحتاجش تتعلم حاجة جديدة</span></strong>
+<span>بما إن الـ </span><code>GPLs</code><span> بتستخدم في مجالات كتير، فيه فرصة إنك ممكن متحتاجش تتعلم لغة جديدة خالص. ده حقيقي بالذات في حالة </span><code>Pulumi</code><span>، لأنه بيدعم كذا لغة من أشهر اللغات في العالم، منهم </span><code>JavaScript</code><span> و</span><code>Python</code><span> و</span><code>Java</code><span>. لو أنت عارف </span><code>Java</code><span> أصلًا، هتقدر تدخل في </span><code>Pulumi</code><span> أسرع من لو كنت مضطر تتعلم </span><code>HCL</code><span> عشان تستخدم </span><code>Terraform</code><span>.</span></p></li><li><p><strong><code>Ecosystem</code><span> أكبر و </span><code>tooling</code><span> أنضج</span></strong>
+<span>بما إن الـ </span><code>GPLs</code><span> بتستخدم في مجالات كتير، فهي ليها مجتمعات أكبر بكتير و</span><code>tooling</code><span> أنضج بكتير من </span><code>DSL</code><span> عادي. عدد وجودة بيئات التطوير المتكاملة (</span><code>IDEs</code><span>)، والمكتبات، والأنماط (</span><code>patterns</code><span>)، وأدوات الاختبار، وهكذا لـ </span><code>Java</code><span> بتتفوق بكتير على اللي متاح لـ </span><code>Terraform</code><span>.</span></p></li><li><p><strong><span>قوة أكبر</span></strong>
+<span>الـ </span><code>GPLs</code><span>، بحكم تصميمها، ممكن تستخدم لعمل أي مهمة برمجية تقريبًا، عشان كده هي بتقدم قوة ووظائف أكتر بكتير من الـ </span><code>DSLs</code><span>. مهام معينة، زي الـ </span><code>control logic</code><span> (</span><code>loops</code><span> و </span><code>conditionals</code><span>)، والـ </span><code>automated testing</code><span>، وإعادة استخدام الكود (</span><code>code reuse</code><span>)، والـ </span><code>abstraction</code><span>، والتكامل مع أدوات تانية، بتبقى أسهل بكتير مع </span><code>Java</code><span> عنها مع </span><code>Terraform</code><span>.</span></p></li></ul><h4 id='master-مقابل-masterless'><strong><code>Master</code><span> مقابل </span><code>Masterless</code></strong></h4><p><span>بشكل افتراضي، </span><code>Chef</code><span> و </span><code>Puppet</code><span> بيتطلبوا إنك تشغل </span><code>master server</code><span> عشان تخزن حالة الـ </span><code>infrastructure</code><span> بتاعتك وتوزع الـ </span><code>updates</code><span>. كل مرة تحب تحدث حاجة في الـ </span><code>infrastructure</code><span> بتاعتك، بتستخدم </span><code>client</code><span> (زي أداة </span><code>command-line</code><span>) عشان تصدر أوامر جديدة للـ </span><code>master server</code><span>، والـ </span><code>master server</code><span> يا إما بيعمل </span><code>push</code><span> للـ </span><code>updates</code><span> دي لكل الـ </span><code>servers</code><span> التانية، أو الـ </span><code>servers</code><span> دي بتسحب (</span><code>pull</code><span>) آخر الـ </span><code>updates</code><span> من الـ </span><code>master server</code><span> بشكل دوري.</span></p><p><span>الـ </span><code>master server</code><span> بيقدم شوية مزايا. أولًا، هو مكان واحد مركزي تقدر تشوف وتدير منه حالة الـ </span><code>infrastructure</code><span> بتاعتك. كتير من أدوات الـ </span><code>configuration management</code><span> بتقدم حتى واجهة ويب (</span><code>web interface</code><span>) (زي </span><code>Chef Console</code><span>، و</span><code>Puppet Enterprise Console</code><span>) للـ </span><code>master server</code><span> عشان تخلي أسهل إنك تشوف إيه اللي بيحصل. ثانيًا، بعض الـ </span><code>master servers</code><span> بتقدر تشتغل باستمرار في الخلفية وتفرض الـ </span><code>configuration</code><span> بتاعتك. بالطريقة دي، لو حد عمل تغيير يدوي على </span><code>server</code><span>، الـ </span><code>master server</code><span> يقدر يرجع التغيير ده عشان يمنع الـ </span><code>configuration drift</code><span>.</span></p><p><span>بس، إنك تضطر تشغل </span><code>master server</code><span> ليه عيوب خطيرة:</span></p><ul><li><p><strong><code>Infrastructure</code><span> زيادة</span></strong>
+<span>أنت محتاج تعمل </span><code>deploy</code><span> لـ </span><code>server</code><span> زيادة، أو حتى </span><code>cluster</code><span> من الـ </span><code>servers</code><span> الزيادة (عشان الـ </span><code>high availability</code><span> والـ </span><code>scalability</code><span>)، بس عشان تشغل الـ </span><code>master</code><span>.</span></p></li><li><p><strong><span>صيانة</span></strong>
+<span>أنت محتاج تعمل صيانة، وتحديث، و </span><code>backup</code><span>، ومراقبة، و </span><code>scale</code><span> للـ </span><code>master server(s)</code><span>.</span></p></li><li><p><strong><span>أمان</span></strong>
+<span>أنت محتاج توفر طريقة للـ </span><code>client</code><span> عشان يكلم الـ </span><code>master server(s)</code><span> وطريقة للـ </span><code>master server(s)</code><span> عشان يكلموا كل الـ </span><code>servers</code><span> التانية، وده عادةً معناه إنك تفتح </span><code>ports</code><span> زيادة وتعمل </span><code>configure</code><span> لأنظمة </span><code>authentication</code><span> زيادة، وكل ده بيزود مساحة الهجوم عليك.</span></p></li></ul><p><code>Chef</code><span> و </span><code>Puppet</code><span> عندهم درجات متفاوتة من الدعم لوضعيات </span><code>masterless</code><span> اللي فيها بتشغل بس الـ </span><code>agent software</code><span> بتاعهم على كل </span><code>server</code><span> من الـ </span><code>servers</code><span> بتاعتك، عادةً بشكل دوري (زي </span><code>cron job</code><span> بيشتغل كل خمس دقايق)، وتستخدم ده عشان تسحب (</span><code>pull down</code><span>) آخر الـ </span><code>updates</code><span> من </span><code>version control</code><span> (بدلًا من </span><code>master server</code><span>). ده بيقلل عدد الأجزاء المتحركة بشكل كبير، بس، زي ما هشرح في الجزء الجاي، ده لسه بيسيب عدد من الأسئلة من غير إجابة، خصوصًا عن إزاي تعمل </span><code>provision</code><span> للـ </span><code>servers</code><span> وتعمل </span><code>install</code><span> للـ </span><code>agent software</code><span> عليها من الأول.</span></p><p><code>Ansible</code><span>، </span><code>CloudFormation</code><span>، </span><code>Heat</code><span>، </span><code>Terraform</code><span>، و</span><code>Pulumi</code><span> كلهم </span><code>masterless</code><span> بشكل افتراضي. أو عشان نبقى أدق، بعضهم بيعتمد على </span><code>master server</code><span>، بس هو أصلًا جزء من الـ </span><code>infrastructure</code><span> اللي أنت بتستخدمها ومش قطعة زيادة محتاج تديرها. على سبيل المثال، </span><code>Terraform</code><span> بيكلم الـ </span><code>cloud providers</code><span> باستخدام الـ </span><code>APIs</code><span> بتاعتهم، فبشكل ما، الـ </span><code>API servers</code><span> هي الـ </span><code>master servers</code><span>، إلا إنها مش بتتطلب أي </span><code>infrastructure</code><span> زيادة أو أي آليات </span><code>authentication</code><span> زيادة (يعني استخدم بس الـ </span><code>API keys</code><span> بتاعتك). </span><code>Ansible</code><span> بيشتغل عن طريق إنه يتصل مباشرة بكل </span><code>server</code><span> عن طريق </span><code>SSH</code><span>، فمرة تانية، أنت مش محتاج تشغل أي </span><code>infrastructure</code><span> زيادة أو تدير آليات </span><code>authentication</code><span> زيادة (يعني استخدم بس الـ </span><code>SSH keys</code><span> بتاعتك).</span></p><p>&nbsp;</p><p><strong><code>Agent</code><span> مقابل </span><code>Agentless</code></strong></p><p><code>Chef</code><span> و</span><code>Puppet</code><span> بيتطلبوا إنك تعمل </span><code>install</code><span> لـ </span><code>agent software</code><span> (زي </span><code>Chef Client</code><span> و</span><code>Puppet Agent</code><span>) على كل </span><code>server</code><span> عايز تعمل له </span><code>configure</code><span>. الـ </span><code>agent</code><span> عادةً بيشتغل في الـ </span><code>background</code><span> على كل </span><code>server</code><span> وهو المسؤول عن إنه يعمل </span><code>install</code><span> لآخر </span><code>updates</code><span> بتاعة الـ </span><code>configuration management</code><span>.</span></p><p><span>ده ليه شوية عيوب:</span></p><ul><li><p><strong><code>Bootstrapping</code></strong>
+<span>إزاي بتعمل </span><code>provision</code><span> للـ </span><code>servers</code><span> بتاعتك وتعمل </span><code>install</code><span> للـ </span><code>agent software</code><span> عليها من الأول خالص؟ بعض أدوات الـ </span><code>configuration management</code><span> بتأجل المشكلة دي، وبتفترض إن فيه </span><code>external process</code><span> هو اللي هيتكفل بيها (زي إنك الأول تستخدم </span><code>Terraform</code><span> عشان تعمل </span><code>deploy</code><span> لمجموعة </span><code>servers</code><span> بـ </span><code>AMI</code><span> يكون الـ </span><code>agent</code><span> معمول له </span><code>install</code><span> عليها أصلًا)؛ أدوات </span><code>configuration management</code><span> تانية ليها عملية </span><code>bootstrapping</code><span> مخصوصة، بتشغل فيها أوامر بتتعمل مرة واحدة (</span><code>one-off commands</code><span>) عشان تعمل </span><code>provision</code><span> للـ </span><code>servers</code><span> باستخدام الـ </span><code>APIs</code><span> بتاعة الـ </span><code>cloud provider</code><span> وتعمل </span><code>install</code><span> للـ </span><code>agent software</code><span> على الـ </span><code>servers</code><span> دي عن طريق </span><code>SSH</code><span>.</span></p></li><li><p><strong><code>Maintenance</code></strong>
+<span>أنت محتاج تعمل </span><code>update</code><span> للـ </span><code>agent software</code><span> بشكل دوري، وتاخد بالك إنك تخليه </span><code>synchronized</code><span> مع الـ </span><code>master server</code><span> لو فيه واحد. محتاج كمان تعمل </span><code>monitor</code><span> للـ </span><code>agent software</code><span> وتعمل له </span><code>restart</code><span> لو عمل </span><code>crash</code><span>.</span></p></li><li><p><strong><code>Security</code></strong>
+<span>لو الـ </span><code>agent software</code><span> بيسحب الـ </span><code>configuration</code><span> من </span><code>master server</code><span> (أو أي </span><code>server</code><span> تاني لو مش بتستخدم </span><code>master</code><span>)، أنت محتاج تفتح </span><code>outbound ports</code><span> على كل </span><code>server</code><span>. لو الـ </span><code>master server</code><span> هو اللي بيعمل </span><code>push</code><span> للـ </span><code>configuration</code><span> للـ </span><code>agent</code><span>، أنت محتاج تفتح </span><code>inbound ports</code><span> على كل </span><code>server</code><span>. في الحالتين، لازم تشوف طريقة تعمل بيها </span><code>authenticate</code><span> للـ </span><code>agent</code><span> مع الـ </span><code>server</code><span> اللي بيكلمه. كل ده بيزود الـ </span><code>surface area to attackers</code><span>.</span></p></li></ul><p><span>مرة تانية، </span><code>Chef</code><span> و </span><code>Puppet</code><span> عندهم درجات متفاوتة من الدعم للـ </span><code>agentless modes</code><span>، بس دي بتحس كأنها اتلزقت في الآخر كفكرة جت بعدين (</span><code>afterthought</code><span>) ومش بتدعم كل الـ </span><code>features</code><span> بتاعة أداة الـ </span><code>configuration management</code><span>. عشان كده </span><code>in the wild</code><span> (يعني في الاستخدام العملي)، الـ </span><code>configuration</code><span> الافتراضي أو الطبيعي (</span><code>idiomatic</code><span>) لـ </span><code>Chef</code><span> و </span><code>Puppet</code><span> غالبًا دايمًا بيكون فيه </span><code>agent</code><span>، وعادةً </span><code>master</code><span> كمان، زي ما هو واضح في شكل 1-7.</span></p><p><img src="imgs/image-20250615083732339.png" referrerpolicy="no-referrer" alt="image-20250615083732339"></p><p><img src="imgs/image-20250615083751326.png" referrerpolicy="no-referrer" alt="image-20250615083751326"></p><p>&nbsp;</p><p><span>كل الأجزاء المتحركة الزيادة دي بتدخل عدد كبير من الـ </span><code>failure modes</code><span> الجديدة في الـ </span><code>infrastructure</code><span> بتاعتك. كل مرة يجيلك </span><code>bug report</code><span> الساعة 3 الفجر، هتحتاج تعرف إذا كان ده </span><code>bug</code><span> في الـ </span><code>application code</code><span> بتاعك، أو الـ </span><code>IaC code</code><span> بتاعك، أو الـ </span><code>configuration management client</code><span>، أو الـ </span><code>master server(s)</code><span>، أو الطريقة اللي الـ </span><code>client</code><span> بيكلم بيها الـ </span><code>master server(s)</code><span>، أو الطريقة اللي الـ </span><code>servers</code><span> التانية بتكلم بيها الـ </span><code>master server(s)</code><span>، أو...</span></p><p><code>Ansible</code><span>، </span><code>CloudFormation</code><span>، </span><code>Heat</code><span>، </span><code>Terraform</code><span>، و</span><code>Pulumi</code><span> مش بيتطلبوا إنك تعمل </span><code>install</code><span> لأي </span><code>agents</code><span> زيادة. أو عشان نكون أدق، بعضهم بيتطلب </span><code>agents</code><span>، بس دي عادةً بتكون معمولة لها </span><code>install</code><span> أصلًا كجزء من الـ </span><code>infrastructure</code><span> اللي أنت بتستخدمها. على سبيل المثال، </span><code>AWS</code><span>، </span><code>Azure</code><span>، </span><code>Google Cloud</code><span>، وكل الـ </span><code>cloud providers</code><span> التانيين بيتكفلوا بعمل </span><code>install</code><span>، و</span><code>manage</code><span>، و</span><code>authenticate</code><span> للـ </span><code>agent software</code><span> على كل الـ </span><code>physical servers</code><span> بتاعتهم. كمستخدم لـ </span><code>Terraform</code><span>، أنت مش محتاج تقلق من أي حاجة من دي: أنت بس بتصدر أوامر (</span><code>issue commands</code><span>)، والـ </span><code>agents</code><span> بتوع الـ </span><code>cloud provider</code><span> بينفذوها بالنيابة عنك على كل الـ </span><code>servers</code><span> بتاعتك، زي ما هو واضح في شكل 1-8. مع </span><code>Ansible</code><span>، الـ </span><code>servers</code><span> بتاعتك محتاجة تشغل الـ </span><code>SSH daemon</code><span>، ودي حاجة شائعة إنها تشتغل على معظم الـ </span><code>servers</code><span> كده كده.</span></p><p><img src="imgs/image-20250615083959132.png" referrerpolicy="no-referrer" alt="image-20250615083959132"></p><p><span>كل الأجزاء المتحركة الزيادة دي بتدخل عدد كبير من الـ </span><code>failure modes</code><span> الجديدة في الـ </span><code>infrastructure</code><span> بتاعتك. كل مرة يجيلك </span><code>bug report</code><span> الساعة 3 الفجر، هتحتاج تعرف إذا كان ده </span><code>bug</code><span> في الـ </span><code>application code</code><span> بتاعك، أو الـ </span><code>IaC code</code><span> بتاعك، أو الـ </span><code>configuration management client</code><span>، أو الـ </span><code>master server(s)</code><span>، أو الطريقة اللي الـ </span><code>client</code><span> بيكلم بيها الـ </span><code>master server(s)</code><span>، أو الطريقة اللي الـ </span><code>servers</code><span> التانية بتكلم بيها الـ </span><code>master server(s)</code><span>، أو...</span></p><p><code>Ansible</code><span>، </span><code>CloudFormation</code><span>، </span><code>Heat</code><span>، </span><code>Terraform</code><span>، و</span><code>Pulumi</code><span> مش بيتطلبوا إنك تعمل </span><code>install</code><span> لأي </span><code>agents</code><span> زيادة. أو عشان نكون أدق، بعضهم بيتطلب </span><code>agents</code><span>، بس دي عادةً بتكون معمولة لها </span><code>install</code><span> أصلًا كجزء من الـ </span><code>infrastructure</code><span> اللي أنت بتستخدمها. على سبيل المثال، </span><code>AWS</code><span>، </span><code>Azure</code><span>، </span><code>Google Cloud</code><span>، وكل الـ </span><code>cloud providers</code><span> التانيين بيتكفلوا بعمل </span><code>install</code><span>، و</span><code>manage</code><span>، و</span><code>authenticate</code><span> للـ </span><code>agent software</code><span> على كل الـ </span><code>physical servers</code><span> بتاعتهم. كمستخدم لـ </span><code>Terraform</code><span>، أنت مش محتاج تقلق من أي حاجة من دي: أنت بس بتصدر أوامر (</span><code>issue commands</code><span>)، والـ </span><code>agents</code><span> بتوع الـ </span><code>cloud provider</code><span> بينفذوها بالنيابة عنك على كل الـ </span><code>servers</code><span> بتاعتك، زي ما هو واضح في شكل 1-8. مع </span><code>Ansible</code><span>، الـ </span><code>servers</code><span> بتاعتك محتاجة تشغل الـ </span><code>SSH daemon</code><span>، ودي حاجة شائعة إنها تشتغل على معظم الـ </span><code>servers</code><span> كده كده.</span></p><h4 id='العرض-المدفوع-مقابل-المجاني-paid-versus-free-offering'><strong><span>العرض المدفوع مقابل المجاني (</span><code>Paid Versus Free Offering</code><span>)</span></strong></h4><p><code>CloudFormation</code><span> و </span><code>OpenStack Heat</code><span> مجانيين تمامًا: الـ </span><code>resources</code><span> اللي بتعملها </span><code>deploy</code><span> بالأدوات دي ممكن تكلفك فلوس، بس أنت مش بتدفع أي حاجة عشان تستخدم الأدوات نفسها. </span><code>Terraform</code><span>، و</span><code>Chef</code><span>، و</span><code>Puppet</code><span>، و</span><code>Ansible</code><span>، و</span><code>Pulumi</code><span> كلهم متاحين في نسخ مجانية ونسخ مدفوعة: على سبيل المثال، ممكن تستخدم النسخة المجانية والـ </span><code>open source</code><span> من </span><code>Terraform</code><span> لوحدها، أو ممكن تختار تستخدمها مع منتج </span><code>HashiCorp</code><span> المدفوع </span><code>Terraform Cloud</code><span>. نقاط الأسعار، والباقات، والـ </span><code>trade-offs</code><span> مع النسخ المدفوعة خارج نطاق الكتاب ده. السؤال الوحيد اللي عايز أركز عليه هنا هو هل النسخة المجانية محدودة لدرجة إنك بتبقى مجبر فعلًا تستخدم العرض المدفوع عشان الـ </span><code>use cases</code><span> الحقيقية في الـ </span><code>production</code><span>.</span></p><p><span>عشان نكون واضحين، مفيش حاجة غلط في إن شركة تقدم خدمة مدفوعة لواحدة من الأدوات دي؛ في الحقيقة، لو بتستخدم الأدوات دي في الـ </span><code>production</code><span>، أنا برشح بقوة إنك تبص على الخدمات المدفوعة، لأن كتير منها يستاهل الفلوس اللي بتتدفع فيه. بس، لازم تبقى مدرك إن الخدمات المدفوعة دي مش تحت سيطرتك—ممكن تفلس، أو يتم الاستحواذ عليها (مثلًا، </span><code>Chef</code><span> و</span><code>Puppet</code><span> و</span><code>Ansible</code><span> كلهم مروا بعمليات استحواذ كان ليها تأثير كبير على عروض منتجاتهم المدفوعة)، أو يغيروا نموذج التسعير بتاعهم (مثلًا، </span><code>Pulumi</code><span> غيرت تسعيرها في 2021، وده أفاد بعض المستخدمين بس زود الأسعار حوالي 10 أضعاف على ناس تانية)، أو يغيروا المنتج، أو يوقفوا المنتج خالص—عشان كده مهم تعرف هل أداة الـ </span><code>IaC</code><span> اللي اخترتها هتفضل قابلة للاستخدام لو، لسبب ما، مقدرتش تستخدم واحدة من الخدمات المدفوعة دي.</span></p><p><span>من خبرتي، النسخ المجانية من </span><code>Terraform</code><span> و</span><code>Chef</code><span> و</span><code>Puppet</code><span> و</span><code>Ansible</code><span> كلها ممكن تستخدم بنجاح في الـ </span><code>production use cases</code><span>؛ الخدمات المدفوعة ممكن تخلي الأدوات دي أحسن كمان، بس لو مكنتش متاحة، هتقدر تمشي حالك. </span><code>Pulumi</code><span>، على الناحية التانية، أصعب في استخدامه في الـ </span><code>production</code><span> من غير العرض المدفوع اللي معروف باسم </span><code>Pulumi Service</code><span>.</span></p><p><span>جزء أساسي من إدارة الـ </span><code>infrastructure as code</code><span> هو إدارة الـ </span><code>state</code><span> (وهتتعلم إزاي </span><code>Terraform</code><span> بيدير الـ </span><code>state</code><span> في الفصل التالت)، و</span><code>Pulumi</code><span>، بشكل افتراضي، بيستخدم </span><code>Pulumi Service</code><span> كـ </span><code>backend</code><span> لتخزين الـ </span><code>state</code><span>. ممكن تحول لـ </span><code>backends</code><span> تانية مدعومة لتخزين الـ </span><code>state</code><span>، زي </span><code>Amazon S3</code><span>، أو </span><code>Azure Blob Storage</code><span>، أو </span><code>Google Cloud Storage</code><span>، بس الـ </span><code>documentation</code><span> بتاع الـ </span><code>backend</code><span> بتاع </span><code>Pulumi</code><span> بيوضح إن </span><code>Pulumi Service</code><span> بس هو اللي بيدعم </span><code>transactional checkpointing</code><span> (عشان الـ </span><code>fault tolerance</code><span> والـ </span><code>recovery</code><span>)، و</span><code>concurrent state locking</code><span> (عشان تمنع إفساد الـ </span><code>infrastructure state</code><span> بتاعك في بيئة عمل جماعية)، و</span><code>encrypted state</code><span> سواء </span><code>in transit</code><span> أو </span><code>at rest</code><span>. في رأيي، من غير الـ </span><code>features</code><span> دي، مش عملي إنك تستخدم </span><code>Pulumi</code><span> في أي نوع من بيئات الـ </span><code>production</code><span> (يعني مع أكتر من </span><code>developer</code><span> واحد)، عشان كده لو هتستخدم </span><code>Pulumi</code><span>، أنت بشكل أو بآخر لازم تدفع عشان </span><code>Pulumi Service</code><span>.</span></p><h4 id='مجتمع-كبير-مقابل-مجتمع-صغير-large-community-versus-small-community'><strong><span>مجتمع كبير مقابل مجتمع صغير (</span><code>Large Community Versus Small Community</code><span>)</span></strong></h4><p><span>كل مرة بتختار تكنولوجيا، أنت كمان بتختار مجتمع. في حالات كتير، الـ </span><code>ecosystem</code><span> اللي حوالين المشروع ممكن يكون ليه تأثير أكبر على تجربتك من جودة التكنولوجيا نفسها. المجتمع بيحدد كام واحد بيساهم في المشروع؛ كام </span><code>plugin</code><span> و</span><code>integration</code><span> و</span><code>extension</code><span> متاحين؛ إيه مدى سهولة إنك تلاقي مساعدة أونلاين (زي </span><code>blog posts</code><span>، أسئلة على </span><code>Stack Overflow</code><span>)؛ وإيه مدى سهولة إنك توظف حد يساعدك (زي موظف، أو </span><code>consultant</code><span>، أو شركة دعم).</span></p><p><span>صعب تعمل مقارنة دقيقة بين المجتمعات، بس تقدر تلاحظ شوية </span><code>trends</code><span> لو بحثت أونلاين. جدول 1-1 بيوضح مقارنة لأشهر أدوات الـ </span><code>IaC</code><span>، ببيانات أنا جمعتها في يونيو 2022، منها هل أداة الـ </span><code>IaC</code><span> </span><code>open source</code><span> ولا </span><code>closed source</code><span>، وإيه الـ </span><code>cloud providers</code><span> اللي بتدعمها، والعدد الإجمالي للـ </span><code>contributors</code><span> والـ </span><code>stars</code><span> على </span><code>GitHub</code><span>، وعدد المكتبات الـ </span><code>open source</code><span> المتاحة للأداة، وعدد الأسئلة المدرجة للأداة دي على </span><code>Stack Overflow</code><span>.</span></p><h3 id='جدول-1-1-مقارنة-بين-مجتمعات-الـ-iac'><strong><span>جدول 1-1. مقارنة بين مجتمعات الـ </span><code>IaC</code></strong></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>الأداة (Tool)</span></th><th style='text-align:left;' ><span>المصدر (Source)</span></th><th style='text-align:left;' ><span>الـ Cloud</span></th><th style='text-align:left;' ><span>المساهمين (Contributors)</span></th><th style='text-align:left;' ><span>Stars</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><strong><span>Chef</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>640</span></td><td style='text-align:left;' ><span>6,910</span></td></tr><tr><td style='text-align:left;' ><strong><span>Puppet</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>571</span></td><td style='text-align:left;' ><span>6,581</span></td></tr><tr><td style='text-align:left;' ><strong><span>Ansible</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>5,328</span></td><td style='text-align:left;' ><span>53,479</span></td></tr><tr><td style='text-align:left;' ><strong><span>Pulumi</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>1,402</span></td><td style='text-align:left;' ><span>12,723</span></td></tr><tr><td style='text-align:left;' ><strong><span>CloudFormation</span></strong></td><td style='text-align:left;' ><span>Closed</span></td><td style='text-align:left;' ><span>AWS</span></td><td style='text-align:left;' ><span>?</span></td><td style='text-align:left;' ><span>?</span></td></tr><tr><td style='text-align:left;' ><strong><span>Heat</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>395</span></td><td style='text-align:left;' ><span>379</span></td></tr><tr><td style='text-align:left;' ><strong><span>Terraform</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>1,621</span></td><td style='text-align:left;' ><span>33,019</span></td></tr></tbody></table></figure><p><span>طبعًا، دي مش مقارنة مثالية </span><code>apples-to-apples</code><span>. على سبيل المثال، بعض الأدوات ليها أكتر من </span><code>repository</code><span> واحد: مثلًا، </span><code>Terraform</code><span> فصل الـ </span><code>provider code</code><span> (يعني الكود المخصوص لـ </span><code>AWS</code><span>، </span><code>Google Cloud</code><span>، </span><code>Azure</code><span>، إلخ) في </span><code>repos</code><span> منفصلة سنة 2017، فالجدول اللي فات ده بيقلل من حجم النشاط بشكل كبير؛ بعض الأدوات بتقدم بدايل لـ </span><code>Stack Overflow</code><span> للأسئلة؛ وهكذا.</span></p><p><span>مع ذلك، فيه كام </span><code>trend</code><span> واضحين. أولًا، كل أدوات الـ </span><code>IaC</code><span> في المقارنة دي </span><code>open source</code><span> وبتشتغل مع </span><code>cloud providers</code><span> كتير، ما عدا </span><code>CloudFormation</code><span>، اللي هو </span><code>closed source</code><span> وبيشتغل بس مع </span><code>AWS</code><span>. ثانيًا، </span><code>Ansible</code><span> و </span><code>Terraform</code><span> شكلهم هما اللي متصدرين بوضوح من ناحية الشعبية.</span></p><p><code>Trend</code><span> تاني مثير للاهتمام نلاحظه هو إزاي الأرقام دي اتغيرت من وقت الطبعة الأولى من الكتاب. جدول 1-2 بيوضح النسبة المئوية للتغيير في كل رقم من القيم اللي جمعتها في الطبعة الأولى في سبتمبر 2016. (ملحوظة: </span><code>Pulumi</code><span> مش موجود في الجدول ده، لأنه مكنش جزء من المقارنة دي في الطبعة الأولى من الكتاب).</span></p><p><strong><span>جدول 1-2. إزاي مجتمعات الـ </span><code>IaC</code><span> اتغيرت بين سبتمبر 2016 و ...</span></strong>
+<span>تمام، اتفضل الجدول الثاني مترجم:</span></p><h3 id='جدول-1-2-إزاي-مجتمعات-الـ-iac-اتغيرت-من-سبتمبر-2016'><strong><span>جدول 1-2. إزاي مجتمعات الـ </span><code>IaC</code><span> اتغيرت من سبتمبر 2016</span></strong></h3><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>الأداة (Tool)</span></th><th style='text-align:left;' ><span>(Source)</span></th><th style='text-align:left;' ><span>الـ Cloud</span></th><th style='text-align:left;' ><span>المساهمين (Contributors)</span></th><th style='text-align:left;' ><span>Stars</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><strong><span>Chef</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>+34%</span></td><td style='text-align:left;' ><span>+56%</span></td></tr><tr><td style='text-align:left;' ><strong><span>Puppet</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>+32%</span></td><td style='text-align:left;' ><span>+58%</span></td></tr><tr><td style='text-align:left;' ><strong><span>Ansible</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>+258%</span></td><td style='text-align:left;' ><span>+183%</span></td></tr><tr><td style='text-align:left;' ><strong><span>CloudFormation</span></strong></td><td style='text-align:left;' ><span>Closed</span></td><td style='text-align:left;' ><span>AWS</span></td><td style='text-align:left;' ><span>?</span></td><td style='text-align:left;' ><span>?</span></td></tr><tr><td style='text-align:left;' ><strong><span>Heat</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>+40%</span></td><td style='text-align:left;' ><span>+34%</span></td></tr><tr><td style='text-align:left;' ><strong><span>Terraform</span></strong></td><td style='text-align:left;' ><span>Open</span></td><td style='text-align:left;' ><span>All</span></td><td style='text-align:left;' ><span>+148%</span></td><td style='text-align:left;' ><span>+476%</span></td></tr></tbody></table></figure><p>&nbsp;</p><p><span>مرة تانية، البيانات هنا مش مثالية، بس كويسة كفاية عشان نلاحظ </span><code>trend</code><span> واضح: </span><code>Terraform</code><span> و </span><code>Ansible</code><span> بيشهدوا نمو انفجاري. الزيادة في عدد الـ </span><code>contributors</code><span>، والـ </span><code>stars</code><span>، والمكتبات الـ </span><code>open source</code><span>، والبوستات على </span><code>Stack Overflow</code><span> ضخمة جدًا (</span><code>through the roof</code><span>). كل من الأداتين دول عندهم مجتمعات كبيرة ونشطة النهارده، وبناءً على الـ </span><code>trends</code><span> دي، من المحتمل إنهم يكبروا أكتر في المستقبل.</span></p><p>&nbsp;</p></div></div>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: "Vazirmatn", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    }
+    </style>
+</body>
+</html>
